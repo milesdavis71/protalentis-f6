@@ -1,0 +1,36 @@
+pages:
+  - 
+    title: Főoldal
+    page: index
+  - 
+    title: Az alapítványról
+    page: alapitvany
+    subtitle1: Huhu 
+    subpage1: huhuhu 
+    subtitle2: Haha 
+    subpage2: haha 
+    subtitle3: Hoho 
+    subpage3: hoho 
+    subtitle4: Hehe 
+    subpage4: hehe 
+  -
+    title: Az SZTE Tehetségpontról
+    page: tehetsegpont
+  -
+    subtitle: Hahaha
+  - 
+    title: Partnerek, támogatók
+    page: partnerek
+  - 
+    title: Pályázatok
+    page: palyazatok
+  - 
+    title: Elérhetőségek
+    page: elerhetosegek
+  - 
+    title: Galéria
+    page: galeria
+  - 
+    title: GDPR
+    page: gdpr
+    
