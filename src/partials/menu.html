@@ -8,24 +8,9 @@
             <li class="menu-text">Site Title</li>
             {{#each global.pages}}
             <li><a href="{{page}}.html">{{title}}</a>
-                {{#if subtitle1}}
-                <ul class="menu">
-                    {{#if subtitle1}}
-                    <li><a>{{subtitle1}}</a></li>
-                    {{/if}}
-                    {{#if subtitle2}}
-                    <li><a>{{subtitle2}}</a></li>
-                    {{/if}}
-                    {{#if subtitle3}}
-                    <li><a>{{subtitle3}}</a></li>
-                    {{/if}}
-                    {{#if subtitle4}}
-                    <li><a>{{subtitle4}}</a></li>
-                    {{/if}}
-                </ul>
-                {{/if}}
-            </li>
-            {{/each}}
-        </ul>
-    </div>
+            {{> submenu type=menu}}
+        </li>
+        {{/each}}
+    </ul>
+</div>
 </div>

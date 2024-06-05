@@ -1,7 +1,16 @@
-{{#ifequal type 'submenu'}}
+{{#ifequal type 'sub'}}
 <ul class="menu">
-    {{#each global.submenu1}}
-    <li><a href="">{{title}}</a></li>
-    {{/each}}
+    {{#if subtitle1}}
+    <li><a href="{{subpage1}}.html">{{subtitle1}}</a></li>
+    {{/if}}
+    {{#if subtitle2}}
+    <li><a href="{{subpage2}}.html">{{subtitle2}}</a></li>
+    {{/if}}
+    {{#if subtitle3}}
+    <li><a href="{{subpage3}}.html">{{subtitle3}}</a></li>
+    {{/if}}
+    {{#if subtitle4}}
+    <li><a href="{{subpage4}}.html">{{subtitle4}}</a></li>
+    {{/if}}
 </ul>
 {{/ifequal}}

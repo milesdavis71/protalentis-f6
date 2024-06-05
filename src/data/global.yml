@@ -5,25 +5,38 @@ pages:
   - 
     title: Az alapítványról
     page: alapitvany
-    subtitle1: Huhu 
-    subpage1: huhuhu 
-    subtitle2: Haha 
-    subpage2: haha 
-    subtitle3: Hoho 
-    subpage3: hoho 
-    subtitle4: Hehe 
-    subpage4: hehe 
+    menu: sub
+    subtitle1: Célkitűzés
+    subpage1: celkituzes 
+    subtitle2: Tevékenység
+    subpage2: tevekenyseg 
+    subtitle3: Szolgáltatások
+    subpage3: szolgaltatasok 
   -
     title: Az SZTE Tehetségpontról
     page: tehetsegpont
-  -
-    subtitle: Hahaha
+    menu: sub
+    subtitle1: Bemutatkozás
+    subpage1: bemutatkozas 
+    subtitle2: Történet
+    subpage2: tortenet 
+    subtitle3: A Szegedi Tehetséggondozó Tanács
+    subpage3: szegedi_tehetseggodnozo_tanacs 
+    subtitle4: Szolgáltatások, tevékenységek
+    subpage4: szolgaltatasok_tevekenysegek 
   - 
     title: Partnerek, támogatók
     page: partnerek
   - 
     title: Pályázatok
     page: palyazatok
+    menu: sub
+    subtitle1: Aktuális
+    subpage1: aktualis 
+    subtitle2: Vállalati Ösztöndíj Program 
+    subpage2: vallalati_osztondij_program 
+    subtitle3: Pro Tanentis Díj
+    subpage3: pro_tanentis_dij 
   - 
     title: Elérhetőségek
     page: elerhetosegek
@@ -33,4 +46,9 @@ pages:
   - 
     title: GDPR
     page: gdpr
+
+
+  news:
+    title: sdfsdf
+    
     
