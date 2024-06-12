@@ -48,7 +48,28 @@ pages:
     page: gdpr
 
 
-  news:
-    title: sdfsdf
+news:
+    - 
+      title: Röplabda Diákolimpia Országos Döntő VII. helyezés 
+      school: Szegedi Petőfi Sándor Általános Iskola Bálint Sándor Tagiskolája
+      img: bs_8oszt_roplabda_donto.jpg
+      imgclass: medium-12
+      contentclass: medium-12
+      content: news03
+    -
+      title: Vármegyei matematika verseny, III. helyezés 
+      school: Szegedi Petőfi Sándor Általános Iskola Bálint Sándor Tagiskolája
+      img: bs_varmegyei_mat_verseny_2024_3_hely_szabo_viktoria.jpg
+      imgclass: medium-4
+      contentclass: medium-8
+      content: news01
+    - 
+      title: Tudásbajnokság, országos döntő, matematika, I. helyezés 
+      school: Szegedi Petőfi Sándor Általános Iskola Bálint Sándor Tagiskolája
+      img: bs-tudasbajnoksag-mat-orszagos-donto-2024-1-hely.jpg
+      imgclass: medium-4
+      contentclass: medium-8
+      content: news02
     
     
+  

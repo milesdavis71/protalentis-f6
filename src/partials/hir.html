@@ -1,0 +1,19 @@
+{{#each global.news}}
+<div class="card">
+    <div class="card-divider">
+<strong>{{title}}</strong>    </div>
+    <div class="card-section">
+        <div class="grid-x grid-margin-x">
+            <div class="cell small-12 {{imgclass}}">
+                <h5>
+                    <img class="thumbnail" src="{{root}}assets/img/hirfolyam/{{img}}">
+                </h5>
+            </div>
+            <div class="cell small-12 {{contentclass}}">
+                <p>▶️ </p>
+                {{> markdown_news_content hir=content}}
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}
