@@ -54,10 +54,7 @@ pages:
     title: Galéria
     page: galeria
     nolink: hide
-  - 
-    title: GDPR
-    page: gdpr
-    nolink: hide
+
 
 
 news:
