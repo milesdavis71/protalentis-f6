@@ -1,16 +1,16 @@
 {{#ifequal type 'sub'}}
 <ul class="menu vertical nested">
     {{#if subtitle1}}
-    <li><a href="{{subpage1}}.html">{{subtitle1}}</a></li>
+    <li {{#ifpage subpage1 }} class="is-active" {{/ifpage}}> <a href="{{subpage1}}.html">{{subtitle1}}</a></li>
     {{/if}}
     {{#if subtitle2}}
-    <li><a href="{{subpage2}}.html">{{subtitle2}}</a></li>
+    <li {{#ifpage subpage2 }} class="is-active" {{/ifpage}}><a href="{{subpage2}}.html">{{subtitle2}}</a></li>
     {{/if}}
     {{#if subtitle3}}
-    <li><a href="{{subpage3}}.html">{{subtitle3}}</a></li>
+    <li {{#ifpage subpage3 }} class="is-active" {{/ifpage}}><a href="{{subpage3}}.html">{{subtitle3}}</a></li>
     {{/if}}
     {{#if subtitle4}}
-    <li><a href="{{subpage4}}.html">{{subtitle4}}</a></li>
+    <li {{#ifpage subpage4 }} class="is-active" {{/ifpage}}><a href="{{subpage4}}.html">{{subtitle4}}</a></li>
     {{/if}}
 </ul>
 {{/ifequal}}

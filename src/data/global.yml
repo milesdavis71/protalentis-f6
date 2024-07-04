@@ -2,6 +2,8 @@ pages:
   - 
     title: Főoldal
     page: index
+    nolink: hide
+
   - 
     title: Az alapítványról
     page: alapitvany
@@ -11,7 +13,9 @@ pages:
     subtitle2: Tevékenység
     subpage2: tevekenyseg 
     subtitle3: Szolgáltatások
-    subpage3: szolgaltatasok 
+    subpage3: szolgaltatasok
+    link: hide
+  
   -
     title: Az SZTE Tehetségpontról
     page: tehetsegpont
@@ -21,51 +25,72 @@ pages:
     subtitle2: Történet
     subpage2: tortenet 
     subtitle3: A Szegedi Tehetséggondozó Tanács
-    subpage3: szegedi_tehetseggodnozo_tanacs 
+    subpage3: szegedi_tehetseggondozo_tanacs 
     subtitle4: Szolgáltatások, tevékenységek
-    subpage4: szolgaltatasok_tevekenysegek 
+    subpage4: szolgaltatasok_tevekenysegek
+    link: hide
+ 
   - 
     title: Partnerek, támogatók
     page: partnerek
+    nolink: hide
+
   - 
     title: Pályázatok
-    page: palyazatok
+    page: aktualis_palyazatok
     menu: sub
     subtitle1: Aktuális
     subpage1: aktualis 
     subtitle2: Vállalati Ösztöndíj Program 
     subpage2: vallalati_osztondij_program 
     subtitle3: Pro Tanentis Díj
-    subpage3: pro_tanentis_dij 
+    subpage3: pro_tanentis_dij
+    link: hide
   - 
     title: Elérhetőségek
     page: elerhetosegek
+    nolink: hide
   - 
     title: Galéria
     page: galeria
+    nolink: hide
   - 
     title: GDPR
     page: gdpr
+    nolink: hide
 
 
 news:
     - 
-      title: Kiváló sportoló pályázat kosárlabdázóknak 
+      title: Kiváló sportoló pályázat kosárlabdázóknak 2023–2024 
       content: news01
       btn_link: kivalo_sportolo_kosarlabdazo_palyazat_2023.pdf
-      btn_title: Pályázat letöltése 
+      btn_title: Pályázat letöltése
 
     -
       title: Középiskolás tehetségek mentora ösztöndíj 
       content: news02
-      btn_link: kivalo_sportolo_kosarlabdazo_palyazat_2023.pdf
+      btn_link: középisk_tehets_mentora_pályáz_felhív_2022_2023.pdf
       btn_title: További információ
     - 
-      title: Tudásbajnokság, országos döntő, matematika, I. helyezés 
-      img: bs-tudasbajnoksag-mat-orszagos-donto-2024-1-hely.jpg
-      imgclass: medium-4
-      contentclass: medium-8
+      title: Kiváló sportoló pályázat kosárlabdázóknak 2022–2023
       content: news03
-    
-    
-  
+      classes: hide
+    - 
+      title: Vállalati ösztöndíjprogram
+      content: news04
+      classes: hide
+    - 
+      title: Ösztöndíj joghallgatók számára 2022
+      content: news05
+      classes: hide
+    - 
+      title: Top élelmiszermérnök 2021
+      content: news06
+      btn_link: elelmiszermernok_palyazati-felhivas_2021.pdf
+      btn_title: További információ
+
+
+      
+
+      

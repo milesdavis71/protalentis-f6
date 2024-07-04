@@ -13,9 +13,17 @@
     </li>
     {{/each}}
 </ul> -->
-<ul class="vertical menu accordion-menu" data-accordion-menu>
+<style type="text/css">
+#menu a {
+    padding: 0.3rem 0 0.3rem 0;
+}
+</style>
+<p class="text-center"><img src="{{root}}assets/img/protalentis_logo.jpg"> <br>
+    Pro Talentis Universitatis Alapítvány
+</p>
+<ul id="menu" class="vertical menu">
     {{#each global.pages}}
-    <li><a href="{{page}}.html">{{title}}</a>
+    <li {{#ifpage page }} class="is-active" {{/ifpage}} id="menu"><a class="{{link}}" href="{{page}}.html">{{title}}</a> <span class="{{nolink}}">{{title}}</span>
         {{> submenu type=menu}}
     </li>
     {{/each}}
