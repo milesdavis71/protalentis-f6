@@ -87,7 +87,58 @@ news:
       btn_link: elelmiszermernok_palyazati-felhivas_2021.pdf
       btn_title: További információ
 
-
-      
-
-      
+partnerek:
+  -
+   title: Szeged Megyei Jogú Város Önkormányzata
+   img: szeged-onkormanyzat
+  -
+   title: Universitas Szeged Szolgáltató Nonprofit Közhasznú Kft.
+   img: universitas-szeged
+  -
+   title: Bproduction Kft.
+   img: bproduction
+  -
+   title: Givaudan Hungary Kft.
+   img: givaudan
+  -
+   title: EPAM System Kft.
+   img: epam
+  -
+   title: Soup Port Levesbár (FenomaPlussz Kft.)
+   img: soupport
+  -
+   title: Dóm Patika (Oros-Med Bt.)
+   img: dompatika
+  -
+   title: Bánffi Szóda
+   img: banffiszoda
+  -
+   title: TE-DI TRADE Kft.
+   img: teditrade
+  -
+   title: ContitechRubberIndustrial Kft.
+   img: contitech
+  -
+   title: Pick Szeged Zrt.
+   img: pick
+  -
+   title: Sole-MizoZrt.
+   img: sole
+  -
+   title: Printker Office Land Zrt.
+   img: printker
+  -
+   title: Szegedi Vízmű Zrt.
+   img: vizmu
+  -
+   title: SZTE Doktori Intézet
+   img: sztedoktoriintezet
+  -
+   title: NaturalImmuneControl System (N.I.C.S.) Zrt.
+   img: naturalimmunecontrol
+  -
+   title: SZTE Tehetségpont
+   img: tehetsegpont
+  -
+   title: Nemzeti Közművek (NKM) Zrt.
+   img: nkm
