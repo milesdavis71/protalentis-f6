@@ -39,8 +39,8 @@ pages:
     title: Pályázatok
     page: aktualis_palyazatok
     menu: sub
-    subtitle1: Aktuális
-    subpage1: aktualis 
+    subtitle1: Aktuális pályázatok
+    subpage1: aktualis_palyazatok 
     subtitle2: Vállalati Ösztöndíj Program 
     subpage2: vallalati_osztondij_program 
     subtitle3: Pro Tanentis Díj
@@ -59,31 +59,37 @@ pages:
 
 news:
     - 
+      title: Pályázat tehetséggondozásban aktív SZTE munkatársak továbbképzési támogatására a 2024/2025. tanév második félévére
+      content: news07
+      btn_link: palyazati_felhivas_Pro-T_tovabbkepzesi_tamogatas_2025.pdf
+      btn_title: PÁLYÁZAT LETÖLTÉSE
+
+    - 
       title: Kiváló sportoló pályázat kosárlabdázóknak 2023–2024 
-      content: news01
+      content: news06
       btn_link: kivalo_sportolo_kosarlabdazo_palyazat_2023.pdf
       btn_title: Pályázat letöltése
 
     -
       title: Középiskolás tehetségek mentora ösztöndíj 
-      content: news02
+      content: news05
       btn_link: középisk_tehets_mentora_pályáz_felhív_2022_2023.pdf
       btn_title: További információ
     - 
       title: Kiváló sportoló pályázat kosárlabdázóknak 2022–2023
-      content: news03
-      classes: hide
-    - 
-      title: Vállalati ösztöndíjprogram
       content: news04
       classes: hide
     - 
+      title: Vállalati ösztöndíjprogram
+      content: news03
+      classes: hide
+    - 
       title: Ösztöndíj joghallgatók számára 2022
-      content: news05
+      content: news02
       classes: hide
     - 
       title: Top élelmiszermérnök 2021
-      content: news06
+      content: news01
       btn_link: elelmiszermernok_palyazati-felhivas_2021.pdf
       btn_title: További információ
 
