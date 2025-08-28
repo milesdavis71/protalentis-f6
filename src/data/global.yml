@@ -59,6 +59,11 @@ pages:
 
 news:
     - 
+      title: Pályázati felhívás
+      content: news08
+      btn_link: palyazati_felhiv_nemz_tan_csapatvers_tamogatasra_2025.pdf
+      btn_title: PÁLYÁZAT LETÖLTÉSE
+    - 
       title: Pályázat tehetséggondozásban aktív SZTE munkatársak továbbképzési támogatására a 2024/2025. tanév második félévére
       content: news07
       btn_link: palyazati_felhivas_Pro-T_tovabbkepzesi_tamogatas_2025.pdf
