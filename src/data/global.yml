@@ -1,12 +1,12 @@
 pages:
   - 
     title: Főoldal
-    page: index
+    page: index.html
     nolink: hide
 
   - 
     title: Az alapítványról
-    page: alapitvany
+    page: alapitvany.html
     menu: sub
     subtitle1: Célkitűzés
     subpage1: celkituzes 
@@ -17,27 +17,22 @@ pages:
     link: hide
   
   -
-    title: Az SZTE Tehetségpontról
-    page: tehetsegpont
-    menu: sub
-    subtitle1: Bemutatkozás
-    subpage1: bemutatkozas 
-    subtitle2: Történet
-    subpage2: tortenet 
-    subtitle3: A Szegedi Tehetséggondozó Tanács
-    subpage3: szegedi_tehetseggondozo_tanacs 
-    subtitle4: Szolgáltatások, tevékenységek
-    subpage4: szolgaltatasok_tevekenysegek
-    link: hide
+    title: Az SZTE Junior Akadémia
+    page: bemutatkozas.html
+    nolink: hide
+
+  - 
+    title: A Szegedi Tehetséggondozó Tanács
+    page: szegedi_tehetseggondozo_tanacs.html 
+    nolink: hide
  
   - 
     title: Partnerek, támogatók
-    page: partnerek
+    page: partnerek.html
     nolink: hide
 
   - 
     title: Pályázatok
-    page: aktualis_palyazatok
     menu: sub
     subtitle1: Aktuális pályázatok
     subpage1: aktualis_palyazatok 
@@ -45,14 +40,16 @@ pages:
     subpage2: vallalati_osztondij_program 
     subtitle3: Pro Tanentis Díj
     subpage3: pro_tanentis_dij
+    subtitle4: Javíts! ösztöndíj
+    subpage4: javits_osztondij
     link: hide
   - 
     title: Elérhetőségek
-    page: elerhetosegek
+    page: elerhetosegek.html
     nolink: hide
   - 
     title: Galéria
-    page: galeria
+    page: galeria.html
     nolink: hide
 
 
@@ -158,3 +155,48 @@ partnerek:
   -
    title: Nemzeti Közművek (NKM) Zrt.
    img: nkm
+
+cegek:
+  - name: "Bánffi & Bánffi Kft."
+    desc: "A Bánffi & Bánffi Kft. alapítói, a szegedi Bánffi család 1907 óta foglalkozik szikvízkészítéssel. Jelenleg az ország egyik legmodernebb, legnagyobb alapterületű szikvízüzeme."
+  - name: "ContiTech Rubber Industrial Kft."
+    desc: "A ContiTech Rubber Industrial Kft. szegedi telephelye a világ legnagyobb szövetbetétes szállítóheveder-gyártó kapacitásával rendelkezik, valamint az olajipari tömlők világpiacának mintegy harmadát tudhatja magáénak. A város egyik legfontosabb ipari munkaadójának minősülő cég."
+  - name: "Givaudan"
+    desc: "A svájci székhelyű Givaudan piacvezető a globális illat- és ízesítőanyag iparágban. Első osztályú sós ízesítőanyagokat gyártó üzeme Makón található, ahol az ízesítőanyagok gyártása első osztályú gyártástechnológiák és felszerelések segítségével történik. A Givaudan megbízható stratégiai partnere a világ vezető élelmiszer- és üdítőital-gyártó cégeinek."
+  - name: "EPAM Systems Kft."
+    desc: "Az EPAM Systems Kft. szegedi vállalatánál mindig is fontos szerepet játszott a társadalmi felelősségvállalás. Elkötelezettek amellett, hogy a náluk jelen lévő tudás és tehetség megosztásával fejlesszék a technológiai oktatást, valamint a tehetségek felkutatásával és gondozásával egy fenntartható közösséget teremtsenek a szakmán belül."
+  - name: "Pick Szeged Zrt."
+    desc: "A Bonafarm Csoport tagjaként a Pick Szeged Zrt. Magyarország és Közép-Európa egyik legjelentősebb és legnagyobb hagyományokkal rendelkező húsipari vállalata, mely szakértő és elkötelezett munkatársainak köszönhetően márkatermékeivel vezető piaci részesedést ért el a hazai piacon."
+  - name: "Printker Zrt."
+    desc: "A Printker Zrt. jelentős hazai nagyvállalatok irodaszer beszállítója, nagykereskedelmi tevékenységük keretében 500 kereskedő vállalkozásnak értékesítenek termékeket. A cég megalakítása óta nagy hangsúlyt fektet a társadalmi szerepvállalásra és a Szegedi Tudományegyetemen is több mint 20 éve végez mecénási tevékenységet."
+  - name: "Sole-Mizo Zrt."
+    desc: "A szegedi székhelyű Sole-Mizo Zrt. két nagy múltú vállalat – a Sole Hungária Rt. és az Új-MiZo Rt. – 2006-ban bejegyzett egyesülésével jött létre és vált Magyarország piacvezető tejipari vállalatává."
+  - name: "TE-DI TRADE Kft."
+    desc: "Az 1992-es alapítású TE-DI TRADE Kft. tejtermék, mirelit és húskészítmény nagykereskedelmi értékesítésével foglalkozó vállalkozás, mely jelenleg mintegy 120 embert foglalkoztat szegedi székhelyén és kecskeméti fióktelepén. A tulajdonosok dinamizmusa, fejlődésbe vetett hite és a cég kiváló szakembergárdája a Dél-alföldi régió meghatározó hűtött élelmiszer nagykereskedelmi vállalkozásává emelte."
+  - name: "Goodwill Pharma"
+    desc: "A Goodwill Pharma 1997-ben alapított, 100%-ban magyar vállalkozás. Szegedi orvos házaspárként határozták el, hogy kiváló minőségű, gyógyító hatású termékek fejlesztésével és széles körű közvetítésével szeretnék támogatni az arra rászorulók egészségét. Vállalatuk nevében a goodwill szó jelentése többszörös tartalommal bír: képviseli a jó egészséget, a jóakaratot, emellett értéket jelent, melynek szellemében cselekednek. (A Goodwill Pharma, alapításának 20. évfordulóján, megalapította a „Goodwill Pharma az Egészségért Alapítvány”-t, mely létrehozta a Szent-Györgyi Albert Orvosi Díjat. Az alapítvány olyan orvosok munkáját ismeri el, akiknek szakmai igényessége, odaadása, embersége kiérdemli a társadalmi köszönetnyilvánítást.)"
+  - name: "Ferroép Zrt."
+    desc: "A Ferroép Zrt. Csongrád-Csanád vármegye egyik meghatározó építőipari társasága, melynek tevékenységi körei közé tartozik az építőipari fővállalkozás, tervezés, generál-kivitelezés, építés, szerelés, valamint gyártás. A magyar építőipar országosan ismert, és elismert, meghatározó vállalkozásaként hatékonyan, felelősségteljesen és versenyképes minőségben szolgálja ki megrendelőit."
+  - name: "Soup Port Levesbár"
+    desc: "A Soup Port Levesbár 2015-ben nyitott meg Szeged belvárosában. Friss, forró, izgalmas leveseivel hamar elnyerte a diákok tetszését. A leveseik mellett grillezett szendvicsekkel, desszertekkel és házi szörpökkel várja vendégeit. Az egyetem épületeihez közel eső elhelyezkedése miatt a hallgatók akár két előadás között is elfogyaszthatnak egy egészséges, gyors ebédet. Házhozszállítással is elérhetőek."
+  - name: "Transcommers Kft."
+    desc: "A Transcommers Kft. 1991-ben alakult elektronikai ipari vállalkozás Szegeden. Tevékenységeik tárháza számos technológiai megoldást és szolgáltatást magában foglal az elektronikiai, illetve mechanikai tervezéstől és gyártástól, különböző alkatrészek, s háztartási és szórakoztató elektronikai cikkek szervizelésén át, a műszaki kárszakértésig."
+  - name: "Szegedi Vízmű Zrt."
+    desc: "A Szegedi Vízmű Zrt. elsődleges célja Szeged és Algyő lakosságának, intézményeinek, iparának egészséges ivóvízzel való ellátása, valamint a keletkezett szennyvizek és csapadékvizek elvezetése, tisztítása és annak a természeti környezetbe történő visszavezetése. Feladata a vízi-közművek üzemeltetése, működőképességének és állagának megóvása, karbantartása, tervszerű felújítása, a vízi-közmű fejlesztések segítése tervezéssel, szakvéleményezéssel."
+  - name: "Natural Immune Control System Zrt."
+    desc: "A Natural Immune Control System Zrt., mely azért jött létre, hogy egy lehetséges megoldást kínáljon azoknak, akik javítani szeretnének saját és mások életminőségén, 2004 óta forgalmaz, illetve 2010 óta gyárt étrend-kiegészítőket. Célja, hogy – egyedülálló konstrukciójának köszönhetően – termékeivel fogyasztói 1 évre előre biztosíthassák vitamin, ásványi anyag és nyomelem szükségletüket."
+
+
+alapitvany_tagok:
+  - name: "Badó Attila"
+    image: "bado-attila"
+  - name: "Balogh Elemér"
+    image: "balogh-elemer"
+  - name: "Sófi József"
+    image: "sofi-jozsef"
+  - name: "Kaáli Géza"
+    image: "kaali-geza"
+  - name: "Kárász Anna"
+    image: "karasz-anna"
+  - name: "Jójárt Ferenc"
+    image: "jojart-ferenc"

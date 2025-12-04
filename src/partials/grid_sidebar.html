@@ -23,7 +23,7 @@
 </p>
 <ul id="menu" class="vertical menu">
     {{#each global.pages}}
-    <li {{#ifpage page }} class="is-active" {{/ifpage}} id="menu"><a class="{{link}}" href="{{page}}.html">{{title}}</a> <span class="{{nolink}}">{{title}}</span>
+    <li {{#ifpage page }} class="is-active" {{/ifpage}} id="menu"><a class="{{link}}" href="{{page}}">{{title}}</a> <span class="{{nolink}}">{{title}}</span>
         {{> submenu type=menu}}
     </li>
     {{/each}}

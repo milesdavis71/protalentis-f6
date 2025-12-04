@@ -1,0 +1,16 @@
+<table class="hover">
+  <thead>
+    <tr>
+      <th>Cég neve</th>
+      <th>Leírás</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each global.cegek}}
+    <tr>
+      <td><strong>{{name}}</strong></td>
+      <td>{{desc}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
