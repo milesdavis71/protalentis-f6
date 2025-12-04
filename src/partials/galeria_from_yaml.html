@@ -1,0 +1,15 @@
+<div class="cell medium-9 medium-cell-block-y">
+    <h5 class="text-center">{{title}}<br>
+        <small>{{date}}</small>
+    </h5>
+    <div class="content">
+        <div class="gg-container">
+            <div class="gg-box dark" id="square">
+                {{#range 1 count pad=3}}
+                <img src="/assets/img/{{../slug}}/thumb/{{this}}_thumb.jpg" data-full="/assets/img/{{../slug}}/full/{{this}}_full.jpg" alt="{{../title}} – {{this}}" loading="lazy">
+                {{/range}}
+            </div>
+        </div>
+    </div>
+    {{>grid_gallery_js}}
+</div>

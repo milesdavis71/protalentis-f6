@@ -1,0 +1,97 @@
+<script>
+const root = document.querySelector("body, html");
+const container = document.querySelector('.gg-container');
+const images = document.querySelectorAll(".gg-box > img");
+const l = images.length;
+
+for (let i = 0; i < l; i++) {
+    images[i].addEventListener("click", function() {
+        let currentImg = this;
+        const parentItem = currentImg.parentElement;
+        const screenItem = document.createElement('div');
+        screenItem.id = "gg-screen";
+        container.prepend(screenItem);
+        if (parentItem.hasAttribute('data-theme'))
+            screenItem.setAttribute("data-theme", "dark");
+
+        // mindig a data-full képet nyitja meg
+        let route = currentImg.dataset.full;
+        root.style.overflow = 'hidden';
+        screenItem.innerHTML = `
+          <div class="gg-image"></div>
+          <div class="gg-close gg-btn">&times;</div>
+          <div class="gg-next gg-btn">&rarr;</div>
+          <div class="gg-prev gg-btn">&larr;</div>
+        `;
+
+        const first = images[0].dataset.full;
+        const last = images[l - 1].dataset.full;
+        const imgItem = document.querySelector(".gg-image");
+        const prevBtn = document.querySelector(".gg-prev");
+        const nextBtn = document.querySelector(".gg-next");
+        const close = document.querySelector(".gg-close");
+
+        imgItem.innerHTML = `<img src="${route}">`;
+
+        let prevImg = currentImg.previousElementSibling;
+        let nextImg = currentImg.nextElementSibling;
+
+        if (route === first) prevBtn.hidden = true;
+        if (route === last) nextBtn.hidden = true;
+        if (l === 1) { prevBtn.hidden = true;
+            nextBtn.hidden = true; }
+
+        screenItem.addEventListener("click", e => {
+            if (e.target === screenItem || e.target === close) hide();
+        });
+
+        root.addEventListener("keydown", e => {
+            if (e.keyCode === 37 || e.keyCode === 38) prev();
+            if (e.keyCode === 39 || e.keyCode === 40) next();
+            if (e.keyCode === 27) hide();
+        });
+
+        prevBtn.addEventListener("click", prev);
+        nextBtn.addEventListener("click", next);
+
+        function prev() {
+            if (!currentImg.previousElementSibling) return;
+            currentImg = currentImg.previousElementSibling;
+            imgItem.innerHTML = `<img src="${currentImg.dataset.full}">`;
+            nextBtn.hidden = false;
+            prevBtn.hidden = (currentImg.dataset.full === first);
+        }
+
+        function next() {
+            if (!currentImg.nextElementSibling) return;
+            currentImg = currentImg.nextElementSibling;
+            imgItem.innerHTML = `<img src="${currentImg.dataset.full}">`;
+            prevBtn.hidden = false;
+            nextBtn.hidden = (currentImg.dataset.full === last);
+        }
+
+        function hide() {
+            root.style.overflow = 'auto';
+            screenItem.remove();
+        }
+    });
+}
+
+function gridGallery(options) {
+    if (options.selector) selector = document.querySelector(options.selector);
+    if (options.darkMode) selector.setAttribute("data-theme", "dark");
+    if (options.layout == "horizontal" || options.layout == "square")
+        selector.setAttribute("data-layout", options.layout);
+    if (options.gaplength)
+        selector.style.setProperty('--gap-length', options.gaplength + 'px');
+    if (options.rowHeight)
+        selector.style.setProperty('--row-height', options.rowHeight + 'px');
+    if (options.columnWidth)
+        selector.style.setProperty('--column-width', options.columnWidth + 'px');
+}
+
+gridGallery({
+    selector: "#square",
+    layout: "square"
+});
+</script>
