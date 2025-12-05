@@ -18,12 +18,15 @@
     padding: 0.3rem 0 0.3rem 0;
 }
 </style>
-<p class="text-center"><img src="{{root}}assets/img/protalentis_logo.jpg"> <br>
+<p class="text-center">
+    <img src="{{root}}assets/img/protalentis_logo.jpg"><br>
     Pro Talentis Universitatis Alapítvány
 </p>
 <ul id="menu" class="vertical menu">
     {{#each global.pages}}
-    <li {{#ifpage page }} class="is-active" {{/ifpage}} id="menu"><a class="{{link}}" href="{{page}}">{{title}}</a> <span class="{{nolink}}">{{title}}</span>
+    <li {{#ifpage page}} class="is-active" {{/ifpage}}>
+        <a class="{{link}}" href="{{root}}{{page}}.html">{{title}}</a>
+        <span class="{{nolink}}">{{title}}</span>
         {{> submenu type=menu}}
     </li>
     {{/each}}

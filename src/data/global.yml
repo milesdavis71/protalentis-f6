@@ -1,12 +1,12 @@
 pages:
   - 
     title: Főoldal
-    page: index.html
+    page: index
     nolink: hide
 
   - 
     title: Az alapítványról
-    page: alapitvany.html
+    page: alapitvany      # ha lesz saját oldala
     menu: sub
     subtitle1: Célkitűzés
     subpage1: celkituzes 
@@ -18,17 +18,17 @@ pages:
   
   -
     title: Az SZTE Junior Akadémia
-    page: bemutatkozas.html
+    page: bemutatkozas
     nolink: hide
 
   - 
     title: A Szegedi Tehetséggondozó Tanács
-    page: szegedi_tehetseggondozo_tanacs.html 
+    page: szegedi_tehetseggondozo_tanacs
     nolink: hide
  
   - 
     title: Partnerek, támogatók
-    page: partnerek.html
+    page: partnerek
     nolink: hide
 
   - 
@@ -43,15 +43,16 @@ pages:
     subtitle4: Javíts! ösztöndíj
     subpage4: javits_osztondij
     link: hide
-  - 
-    title: Elérhetőségek
-    page: elerhetosegek.html
-    nolink: hide
+
   - 
     title: Galéria
-    page: galeria.html
+    page: galeria
     nolink: hide
 
+  - 
+    title: Elérhetőségek
+    page: elerhetosegek
+    nolink: hide
 
 
 news:

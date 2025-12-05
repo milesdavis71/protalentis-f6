@@ -13,21 +13,80 @@
 
 <body>
     <style>
-        blockquote {
-  color: #0078d4; 
-  border-left: 4px solid currentColor;
-  font-size: 100%;
-  padding-left: 1rem;
-}
-a {
-    text-decoration:underline ;
-}
-a:hover {
-    color:orange ;
-}
+    blockquote {
+        color: #0078d4;
+        border-left: 4px solid currentColor;
+        font-size: 100%;
+        padding-left: 1rem;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    a:hover {
+        color: orange;
+    }
     </style>
     {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
     {{> grid}} <script src="{{root}}assets/js/app.js"></script>
+    <!-- Automatikus frissítés script -->
+    <script>
+    (function() {
+        var CHECK_INTERVAL = 10000; // 10 másodperc
+        var VERSION_URL = '{{root}}version.json';
+        var currentVersion = null;
+
+        function checkVersion() {
+            var url = VERSION_URL + '?_=' + Date.now();
+            console.log('[version-check] Lekérés:', url);
+
+            fetch(url, { cache: 'no-store' })
+                .then(function(res) {
+                    console.log('[version-check] HTTP státusz:', res.status);
+                    if (!res.ok) return;
+                    return res.json();
+                })
+                .then(function(data) {
+                    if (!data || typeof data.version === 'undefined') {
+                        console.log('[version-check] Nincs "version" mező:', data);
+                        return;
+                    }
+
+                    var serverVersion = String(data.version);
+                    console.log('[version-check] Szerver verzió:', serverVersion,
+                        '| Jelenlegi verzió:', currentVersion);
+
+                    // első futás: csak eltároljuk, mi a mostani verzió
+                    if (currentVersion === null) {
+                        currentVersion = serverVersion;
+                        return;
+                    }
+
+                    // ha változott, reload
+                    if (serverVersion !== currentVersion) {
+                        console.log('[version-check] VERZIÓ VÁLTOZOTT → RELOAD');
+
+                        // cache-kerülős reload ugyanarra az oldalra
+                        var newUrl = window.location.pathname +
+                            '?v=' + encodeURIComponent(serverVersion) +
+                            '&_=' + Date.now() +
+                            window.location.hash;
+
+                        console.log('[version-check] Navigáció:', newUrl);
+                        window.location.assign(newUrl);
+                    }
+                })
+                .catch(function(err) {
+                    console.warn('[version-check] Hiba:', err);
+                });
+        }
+
+        checkVersion();
+        setInterval(checkVersion, CHECK_INTERVAL);
+    })();
+    </script>
+    <!-- /Automatikus frissítés script -->
 </body>
 
 </html>
