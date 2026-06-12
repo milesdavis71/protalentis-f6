@@ -10,9 +10,9 @@
   "author": "Foundation Yetinauts <contact@get.foundation> (https://get.foundation)",
   "license": "MIT",
   "dependencies": {
-    "foundation-sites": "latest",
+    "foundation-sites": "6.9.0",
     "jquery": "^3.6.0",
-    "motion-ui": "latest",
+    "motion-ui": "2.0.8",
     "what-input": "^5.2.10"
   },
   "devDependencies": {
