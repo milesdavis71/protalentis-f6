@@ -20,6 +20,12 @@
     padding: 0.3rem 2.5rem 0.3rem 0;
 }
 
+#menu a i {
+    margin-right: 0.5rem;
+    width: 1.25rem;
+    text-align: center;
+}
+
 #menu .is-active > a {
     background: transparent;
     color: #ffa500;
@@ -41,9 +47,9 @@
     {{#each global.pages}}
     <li {{#ifpage page}} class="is-active" {{/ifpage}}>
         {{#if link}}
-        <a href="#">{{title}}</a>
+        <a href="#">{{#if icon}}<i class="{{faClassList icon ' '}}" aria-hidden="true"></i>{{/if}}{{title}}</a>
         {{else}}
-        <a href="{{root}}{{page}}.html">{{title}}</a>
+        <a href="{{root}}{{page}}.html">{{#if icon}}<i class="{{faClassList icon ' '}}" aria-hidden="true"></i>{{/if}}{{title}}</a>
         {{/if}}
         {{> submenu type=menu}}
     </li>
