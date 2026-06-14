@@ -30,7 +30,10 @@
     }
     </style>
     {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
-    {{> grid}} <script src="{{root}}assets/js/app.js"></script>
+    <div class="site-shell">
+        {{> grid}}
+    </div>
+    <script src="{{root}}assets/js/app.js"></script>
     <!-- Automatikus frissítés script -->
     <script>
     (function() {
