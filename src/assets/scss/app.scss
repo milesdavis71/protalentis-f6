@@ -85,3 +85,132 @@ body {
   background: #fff;
 }
 
+.news-preview,
+.news-grid {
+  margin-bottom: 1rem;
+}
+
+.news-card {
+  background: #fff;
+  border: 1px solid #d8d8d8;
+  border-radius: 6px;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  height: 100%;
+  text-decoration: none;
+  text-align: left;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+  width: 100%;
+}
+
+.news-card:hover,
+.news-card:focus {
+  border-color: #8b0000;
+  box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.12);
+  color: inherit;
+  outline: none;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.news-card .card-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.news-card-title {
+  color: #8b0000;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.news-card-meta,
+.news-modal-meta {
+  margin: auto 0 0;
+}
+
+.news-card-meta div,
+.news-modal-meta div {
+  border-top: 1px solid #eeeeee;
+  padding: 0.65rem 0;
+}
+
+.news-card-meta dt,
+.news-modal-meta dt {
+  color: #575757;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 0.15rem;
+  text-transform: uppercase;
+}
+
+.news-card-meta dd,
+.news-modal-meta dd {
+  margin: 0;
+}
+
+.news-modal {
+  max-width: 54rem;
+}
+
+.news-modal-header {
+  padding-right: 2.5rem;
+  position: relative;
+}
+
+.news-modal-header .close-button {
+  position: absolute;
+  right: 0;
+  top: -0.35rem;
+}
+
+@include breakpoint(small only) {
+  .news-modal.reveal {
+    border: 0;
+    bottom: 0;
+    height: 100vh;
+    left: 0;
+    margin: 0;
+    max-width: none;
+    min-height: 100vh;
+    overflow-y: auto;
+    padding: 0;
+    right: 0;
+    top: 0 !important;
+    width: 100%;
+  }
+
+  .news-modal-header {
+    background: #fff;
+    border-bottom: 1px solid #eeeeee;
+    padding: 1rem 3rem 1rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+
+  .news-modal-header .h4 {
+    font-size: 1.15rem;
+    line-height: 1.35;
+    margin: 0;
+  }
+
+  .news-modal-header .close-button {
+    right: 0.75rem;
+    top: 0.65rem;
+  }
+
+  .news-modal-meta,
+  .news-modal > div:not(.news-modal-header),
+  .news-modal > p {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .news-modal-meta {
+    margin-top: 0.5rem;
+  }
+}
+

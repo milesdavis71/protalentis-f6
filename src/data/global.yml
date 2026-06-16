@@ -6,6 +6,13 @@ pages:
     page: index
     nolink: hide
 
+  - title: Hírek
+    icon:
+      - fa-duotone
+      - fa-newspaper
+    page: hirek
+    nolink: hide
+
   - title: Az alapítványról
     icon:
       - fa-duotone

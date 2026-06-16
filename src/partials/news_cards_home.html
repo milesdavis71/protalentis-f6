@@ -1,0 +1,16 @@
+<section class="news-preview">
+    <div class="grid-x grid-margin-x align-stretch">
+        {{#each global.news}}
+        {{#lt @index 3}}
+        <div class="cell small-12 medium-4">
+            {{> news_card}}
+        </div>
+        {{/lt}}
+        {{/each}}
+    </div>
+    {{#each global.news}}
+    {{#lt @index 3}}
+    {{> news_modal}}
+    {{/lt}}
+    {{/each}}
+</section>
