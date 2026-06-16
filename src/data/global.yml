@@ -73,56 +73,71 @@ pages:
 news:
   - title: Pro Talentis – Altajisztikai Ösztöndíj 2026
     content: news11
-    date:
+    date: 2026. 03. 17.
+    deadline:
     btn_link: palyazati_felhivas_altajisztika_osztondij_2026.pdf
     btn_title: PÁLYÁZAT ADATLAP LETÖLTÉSE
+
   - title: Top élelmiszermérnök 2026
     content: news10
-    date:
+    date: 2025. 12. 18.
+    deadline:
     btn_link: top-elelmiszermernok-2026.pdf
     btn_title: PÁLYÁZAT ADATLAP LETÖLTÉSE
+
   - title: Tanulmányi ösztöndíjpályázat kosárlabdázóknak
     content: news09
-    date:
-    btn_link: kivalo_sportolo_palyazati_adatlap_2025.pdf
+    date: 2025. 10. 05.
+    deadline:
+    btn_link: 
     btn_title: PÁLYÁZAT ADATLAP LETÖLTÉSE
+
   - title: Pályázati felhívás
     content: news08
-    date:
+    date: 2025. 08.28.
+    deadline:
     btn_link: palyazati_felhiv_nemz_tan_csapatvers_tamogatasra_2025.pdf
     btn_title: PÁLYÁZAT LETÖLTÉSE
+
   - title: Pályázat tehetséggondozásban aktív SZTE munkatársak továbbképzési támogatására a 2024/2025. tanév második félévére
     content: news07
-    date:
+    date: 2025. 04. 23.
+    deadline:
     btn_link: palyazati_felhivas_Pro-T_tovabbkepzesi_tamogatas_2025.pdf
     btn_title: PÁLYÁZAT LETÖLTÉSE
 
   - title: Kiváló sportoló pályázat kosárlabdázóknak 2023–2024
     content: news06
     date:
+    deadline:
     btn_link: kivalo_sportolo_kosarlabdazo_palyazat_2023.pdf
     btn_title: Pályázat letöltése
 
   - title: Középiskolás tehetségek mentora ösztöndíj
     content: news05
     date:
+    deadline:
     btn_link: középisk_tehets_mentora_pályáz_felhív_2022_2023.pdf
     btn_title: További információ
   - title: Kiváló sportoló pályázat kosárlabdázóknak 2022–2023
     content: news04
     date:
+    deadline:
     classes: hide
   - title: Vállalati ösztöndíjprogram
     content: news03
     date:
+    deadline:
     classes: hide
   - title: Ösztöndíj joghallgatók számára 2022
     content: news02
     date:
+    deadline:
     classes: hide
   - title: Top élelmiszermérnök 2021
     content: news01
     date:
+    deadline:
     btn_link: elelmiszermernok_palyazati-felhivas_2021.pdf
     btn_title: További információ
 
