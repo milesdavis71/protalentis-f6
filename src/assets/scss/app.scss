@@ -85,6 +85,11 @@ body {
   background: #fff;
 }
 
+.site-shell > .grid-x {
+  padding-bottom: 1.5rem;
+  padding-top: 1rem;
+}
+
 .site-logo {
   height: auto;
   max-width: 100%;
@@ -111,7 +116,8 @@ body {
   color: $brand-burgundy;
 }
 
-#menu a {
+#menu a,
+#mobile-menu a {
   align-items: center;
   box-shadow: inset 0 -1px rgba($brand-blue, 0.3);
   color: $brand-blue;
@@ -124,26 +130,86 @@ body {
 #menu a:hover,
 #menu a:focus,
 #menu .is-active > a,
-#menu .is-accordion-submenu-parent.is-active > a {
+#menu .is-accordion-submenu-parent.is-active > a,
+#mobile-menu a:hover,
+#mobile-menu a:focus,
+#mobile-menu .is-active > a,
+#mobile-menu .is-accordion-submenu-parent.is-active > a {
   background: transparent;
   color: $brand-burgundy;
 }
 
-#menu a i {
+#menu a i,
+#mobile-menu a i {
   flex: 0 0 1.25rem;
   margin-right: 0.5rem;
   text-align: center;
   width: 1.25rem;
 }
 
-#menu a .menu-label {
+#menu a .menu-label,
+#mobile-menu a .menu-label {
   flex: 1 1 auto;
   min-width: 0;
   white-space: normal;
 }
 
-#menu .nested a {
+#menu .nested a,
+#mobile-menu .nested a {
   padding-left: 1rem;
+}
+
+.desktop-sidebar,
+.mobile-nav-panel {
+  background: #fff;
+}
+
+.navigation-logo {
+  margin-bottom: 1rem;
+}
+
+.mobile-nav {
+  background: #fff;
+  border: 1px solid rgba($brand-blue, 0.15);
+  border-radius: 0.75rem;
+  box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.06);
+  margin-bottom: 1rem;
+}
+
+.mobile-nav-summary {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0.9rem 1rem;
+}
+
+.mobile-nav-summary::-webkit-details-marker {
+  display: none;
+}
+
+.mobile-nav-brand {
+  color: $brand-blue;
+  font-weight: 700;
+}
+
+.mobile-nav-toggle {
+  color: $brand-burgundy;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.mobile-nav[open] .mobile-nav-summary {
+  border-bottom: 1px solid rgba($brand-blue, 0.15);
+}
+
+.mobile-nav-panel {
+  padding: 0.5rem 1rem 1rem;
+}
+
+.mobile-nav-panel #mobile-menu {
+  margin-bottom: 0;
 }
 
 .news-preview,
@@ -228,6 +294,14 @@ body {
 }
 
 @include breakpoint(small only) {
+  .site-shell {
+    min-height: auto;
+  }
+
+  .site-shell > .grid-x {
+    padding-top: 0.75rem;
+  }
+
   .news-modal.reveal {
     border: 0;
     bottom: 0;

@@ -1,14 +1,10 @@
-<div class="grid-y grid-frame">
+<div class="grid-x grid-padding-x">
     {{> grid_header}}
-    <div class="cell auto cell-block-container">
-        <div class="grid-x grid-padding-x">
-            <div class="cell medium-3 medium-cell-block-y">
-                {{> grid_sidebar}}
-            </div>
-            <div class="cell medium-9 medium-cell-block-y">
-                {{> body}}
-            </div>
-        </div>
+    <div class="cell medium-3">
+        {{> grid_sidebar}}
+    </div>
+    <div class="cell small-12 medium-9">
+        {{> body}}
     </div>
 <!--     <div class="cell shrink footer">
         {{> grid_footer}}

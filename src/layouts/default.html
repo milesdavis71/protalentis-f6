@@ -1,97 +1,106 @@
-{{!-- This is the base layout for your project, and will be used on every page unless specified. --}}
+{{!-- This is the base layout for your project, and will be used on every page
+unless specified. --}}
 <!doctype html>
 <html class="no-js" lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pro Talentis Universitas Alapítvány</title>
-    <link rel="shortcut icon" type="image/x-icon" href="{{root}}assets/img/favicon.ico" />
-    <link rel="stylesheet" href="{{root}}assets/css/all.min.css">
-    <link rel="stylesheet" href="{{root}}assets/css/app.css">
-</head>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="{{root}}assets/img/favicon.ico"
+    />
+    <link rel="stylesheet" href="{{root}}assets/css/all.min.css" />
+    <link rel="stylesheet" href="{{root}}assets/css/app.css" />
+  </head>
 
-<body>
+  <body>
     <style>
-    blockquote {
+      blockquote {
         color: #52666f;
         border-left: 4px solid #ab4d3a;
         font-size: 100%;
         font-style: italic;
         padding-left: 1rem;
-    }
+      }
 
-    a {
+      a {
         text-decoration: underline;
-    }
+      }
 
-    a:hover {
+      a:hover {
         color: orange;
-    }
+      }
     </style>
-    {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
-    <div class="site-shell">
-        {{> grid}}
-    </div>
+    {{!-- Pages you create in the src/pages/ folder are inserted here when the
+    flattened page is created. --}}
+    <div class="site-shell">{{> grid}}</div>
     <script src="{{root}}assets/js/app.js"></script>
     <!-- Automatikus frissítés script -->
     <script>
-    (function() {
+      (function () {
         var CHECK_INTERVAL = 10000; // 10 másodperc
-        var VERSION_URL = '{{root}}version.json';
+        var VERSION_URL = "{{root}}version.json";
         var currentVersion = null;
 
         function checkVersion() {
-            var url = VERSION_URL + '?_=' + Date.now();
-            console.log('[version-check] Lekérés:', url);
+          var url = VERSION_URL + "?_=" + Date.now();
+          console.log("[version-check] Lekérés:", url);
 
-            fetch(url, { cache: 'no-store' })
-                .then(function(res) {
-                    console.log('[version-check] HTTP státusz:', res.status);
-                    if (!res.ok) return;
-                    return res.json();
-                })
-                .then(function(data) {
-                    if (!data || typeof data.version === 'undefined') {
-                        console.log('[version-check] Nincs "version" mező:', data);
-                        return;
-                    }
+          fetch(url, { cache: "no-store" })
+            .then(function (res) {
+              console.log("[version-check] HTTP státusz:", res.status);
+              if (!res.ok) return;
+              return res.json();
+            })
+            .then(function (data) {
+              if (!data || typeof data.version === "undefined") {
+                console.log('[version-check] Nincs "version" mező:', data);
+                return;
+              }
 
-                    var serverVersion = String(data.version);
-                    console.log('[version-check] Szerver verzió:', serverVersion,
-                        '| Jelenlegi verzió:', currentVersion);
+              var serverVersion = String(data.version);
+              console.log(
+                "[version-check] Szerver verzió:",
+                serverVersion,
+                "| Jelenlegi verzió:",
+                currentVersion,
+              );
 
-                    // első futás: csak eltároljuk, mi a mostani verzió
-                    if (currentVersion === null) {
-                        currentVersion = serverVersion;
-                        return;
-                    }
+              // első futás: csak eltároljuk, mi a mostani verzió
+              if (currentVersion === null) {
+                currentVersion = serverVersion;
+                return;
+              }
 
-                    // ha változott, reload
-                    if (serverVersion !== currentVersion) {
-                        console.log('[version-check] VERZIÓ VÁLTOZOTT → RELOAD');
+              // ha változott, reload
+              if (serverVersion !== currentVersion) {
+                console.log("[version-check] VERZIÓ VÁLTOZOTT → RELOAD");
 
-                        // cache-kerülős reload ugyanarra az oldalra
-                        var newUrl = window.location.pathname +
-                            '?v=' + encodeURIComponent(serverVersion) +
-                            '&_=' + Date.now() +
-                            window.location.hash;
+                // cache-kerülős reload ugyanarra az oldalra
+                var newUrl =
+                  window.location.pathname +
+                  "?v=" +
+                  encodeURIComponent(serverVersion) +
+                  "&_=" +
+                  Date.now() +
+                  window.location.hash;
 
-                        console.log('[version-check] Navigáció:', newUrl);
-                        window.location.assign(newUrl);
-                    }
-                })
-                .catch(function(err) {
-                    console.warn('[version-check] Hiba:', err);
-                });
+                console.log("[version-check] Navigáció:", newUrl);
+                window.location.assign(newUrl);
+              }
+            })
+            .catch(function (err) {
+              console.warn("[version-check] Hiba:", err);
+            });
         }
 
         checkVersion();
         setInterval(checkVersion, CHECK_INTERVAL);
-    })();
+      })();
     </script>
     <!-- /Automatikus frissítés script -->
-</body>
-
+  </body>
 </html>

@@ -1,33 +1,3 @@
-<!-- <div class="title-bar" data-responsive-toggle="example-animated-menu" data-hide-for="medium">
-    <button class="menu-icon" type="button" data-toggle></button>
-    <div class="title-bar-title">Menu</div>
-</div> -->
-<!-- <div class="top-bar" id="example-animated-menu" data-animate="hinge-in-from-top spin-out">
-    <div class="top-bar-left">
- -->
-<!-- <ul class=" dropdown menu" data-dropdown-menu>
-    <li class="menu-text">Site Title</li>
-    {{#each global.pages}}
-    <li><a href="{{page}}.html">{{title}}</a>
-        {{> submenu type=menu}}
-    </li>
-    {{/each}}
-</ul> -->
-<p class="text-center">
-    <a class="site-logo-link" href="{{root}}index.html" aria-label="Ugrás a főoldalra">
-    <img class="site-logo" src="{{root}}assets/img/pro-talentis-logo.svg" alt="Pro Talentis Universitatis Alapítvány"><br>
-    Pro Talentis Universitatis Alapítvány
-    </a>
-</p>
-<ul id="menu" class="vertical menu accordion-menu" data-accordion-menu>
-    {{#each global.pages}}
-    <li {{#ifpage page}} class="is-active" {{/ifpage}}>
-        {{#if link}}
-        <a href="#">{{#if icon}}<i class="{{faClassList icon ' '}}" aria-hidden="true"></i>{{/if}}<span class="menu-label">{{title}}</span></a>
-        {{else}}
-        <a href="{{root}}{{page}}.html">{{#if icon}}<i class="{{faClassList icon ' '}}" aria-hidden="true"></i>{{/if}}<span class="menu-label">{{title}}</span></a>
-        {{/if}}
-        {{> submenu type=menu}}
-    </li>
-    {{/each}}
-</ul>
+<aside class="desktop-sidebar show-for-medium">
+    {{> navigation_menu menuId="menu" menuClass="vertical menu accordion-menu"}}
+</aside>
