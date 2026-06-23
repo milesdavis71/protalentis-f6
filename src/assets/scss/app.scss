@@ -116,6 +116,11 @@ body {
   color: $brand-burgundy;
 }
 
+.top-bar .menu > li.is-active > a {
+  background: transparent;
+  color: get-color(secondary);
+}
+
 #menu a,
 #mobile-menu a {
   align-items: center;
@@ -130,11 +135,13 @@ body {
 #menu a:hover,
 #menu a:focus,
 #menu .is-active > a,
-#menu .is-accordion-submenu-parent.is-active > a,
+#menu .is-current > a,
+#menu .is-accordion-submenu-parent[aria-expanded='true'] > a,
 #mobile-menu a:hover,
 #mobile-menu a:focus,
 #mobile-menu .is-active > a,
-#mobile-menu .is-accordion-submenu-parent.is-active > a {
+#mobile-menu .is-current > a,
+#mobile-menu .is-accordion-submenu-parent[aria-expanded='true'] > a {
   background: transparent;
   color: $brand-burgundy;
 }

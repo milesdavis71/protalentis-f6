@@ -233,3 +233,14 @@ partnerek:
     img: tehetsegpont
   - title: Nemzeti Közművek (NKM) Zrt.
     img: nkm
+
+topBar:
+  - title: Aktuális pályázatok
+    url: aktualis_palyazatok.html
+    page: aktualis_palyazatok
+    subpage1: vallalati_osztondij_program
+    subpage2: pro_tanentis_dij
+    subpage3: javits_osztondij
+  - title: Elérhetőségek
+    url: elerhetosegek.html
+    page: elerhetosegek

@@ -10,8 +10,11 @@
           <li><a href="#">Three</a></li>
         </ul>
       </li> -->
-      <li><a href="#">Elérhetőség</a></li>
-      <li><a href="#">Three</a></li>
+      {{#each global.topBar}}
+      <li{{#ifpage page subpage1 subpage2 subpage3}} class="is-active"{{/ifpage}}>
+        <a href="{{root}}{{url}}"{{#ifpage page subpage1 subpage2 subpage3}} aria-current="true"{{/ifpage}}>{{title}}</a>
+      </li>
+      {{/each}}
     </ul>
   </div>
   <div class="top-bar-right">
