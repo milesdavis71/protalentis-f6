@@ -116,7 +116,9 @@ body {
   color: $brand-burgundy;
 }
 
-.top-bar .menu > li.is-active > a {
+.top-bar .menu > li.is-active > a,
+.top-bar .menu > li > a:hover,
+.top-bar .menu > li > a:focus {
   background: transparent;
   color: get-color(secondary);
 }
