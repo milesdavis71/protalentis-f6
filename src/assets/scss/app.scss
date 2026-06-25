@@ -116,11 +116,15 @@ body {
   color: $brand-burgundy;
 }
 
+.top-bar .menu > li > a {
+  color: $white;
+}
+
 .top-bar .menu > li.is-active > a,
 .top-bar .menu > li > a:hover,
 .top-bar .menu > li > a:focus {
   background: transparent;
-  color: get-color(secondary);
+  color: mix(get-color(secondary), $white, 30%);
 }
 
 #menu a,
