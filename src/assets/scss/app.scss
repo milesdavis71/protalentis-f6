@@ -120,6 +120,11 @@ body {
   color: $white;
 }
 
+.top-bar .menu-text > a {
+  display: inline;
+  padding: 0;
+}
+
 .top-bar .menu > li.is-active > a,
 .top-bar .menu > li > a:hover,
 .top-bar .menu > li > a:focus {
