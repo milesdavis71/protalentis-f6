@@ -1,12 +1,12 @@
-<a class="news-card card" href="{{root}}{{palyazatPath slug content}}">
+<a class="palyazat-card card" href="{{root}}{{palyazatPath slug content}}">
     <div class="card-section">
-        <h2 class="news-card-title h6">{{title}}</h2>
+        <h2 class="palyazat-card-title h6">{{title}}</h2>
         {{#if image}}
-        <div class="news-card-image">
-            <img src="{{root}}assets/img/news/{{image}}.jpg" alt="{{title}}" loading="lazy">
+        <div class="palyazat-card-image">
+            <img src="{{root}}assets/img/palyazat/{{image}}.jpg" alt="{{title}}" loading="lazy">
         </div>
         {{/if}}
-        <dl class="news-card-meta">
+        <dl class="palyazat-card-meta">
             <div>
                 <dt>Létrehozás dátuma</dt>
                 <dd>{{#if date}}{{date}}{{else}}Nincs megadva{{/if}}</dd>

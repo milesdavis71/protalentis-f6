@@ -20,8 +20,8 @@ const postcss = require('gulp-postcss');
 const uncss = require('postcss-uncss');
 const unsafeYamlTypes = require('js-yaml-js-types').all;
 const YAML_SCHEMA = yaml.DEFAULT_SCHEMA.extend(unsafeYamlTypes);
-const GENERATED_NEWS_DIR = path.join('src', 'pages', 'hirek');
-const GENERATED_NEWS_GLOB = 'src/pages/hirek/**/*.html';
+const GENERATED_PALYAZAT_DIR = path.join('src', 'pages', 'hirek');
+const GENERATED_PALYAZAT_GLOB = 'src/pages/hirek/**/*.html';
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -42,61 +42,61 @@ function loadYamlFile(filePath) {
   return yaml.load(fs.readFileSync(filePath, 'utf8'), { schema: YAML_SCHEMA });
 }
 
-function getNewsPageName(newsItem) {
-  return newsItem.slug || newsItem.content;
+function getPalyazatPageName(palyazatItem) {
+  return palyazatItem.slug || palyazatItem.content;
 }
 
-function newsPageTemplate(newsItem) {
+function palyazatPageTemplate(palyazatItem) {
   const frontMatter = yaml.dump({
     layout: '2_hasabos',
-    title: newsItem.title,
-    newsKey: newsItem.content,
-    image: newsItem.image || '',
-    date: newsItem.date || '',
-    deadline: newsItem.deadline || '',
-    btn_link: newsItem.btn_link || '',
-    btn_title: newsItem.btn_title || '',
-    classes: newsItem.classes || '',
-    contentclass: newsItem.contentclass || ''
+    title: palyazatItem.title,
+    palyazatKey: palyazatItem.content,
+    image: palyazatItem.image || '',
+    date: palyazatItem.date || '',
+    deadline: palyazatItem.deadline || '',
+    btn_link: palyazatItem.btn_link || '',
+    btn_title: palyazatItem.btn_title || '',
+    classes: palyazatItem.classes || '',
+    contentclass: palyazatItem.contentclass || ''
   }, { lineWidth: -1 });
 
   return `---\n${frontMatter}---\n{{> palyazat_article}}\n`;
 }
 
-function generateNewsPages(done) {
+function generatePalyazatPages(done) {
   const globalData = loadYamlFile(path.join('src', 'data', 'global.yml'));
-  const newsItems = Array.isArray(globalData.news) ? globalData.news : [];
+  const palyazatItems = Array.isArray(globalData.palyazatok) ? globalData.palyazatok : [];
   const usedPageNames = new Set();
   const expectedFiles = new Set();
 
-  fs.mkdirSync(GENERATED_NEWS_DIR, { recursive: true });
+  fs.mkdirSync(GENERATED_PALYAZAT_DIR, { recursive: true });
 
-  newsItems.forEach((newsItem) => {
-    if (!newsItem.content) {
+  palyazatItems.forEach((palyazatItem) => {
+    if (!palyazatItem.content) {
       return;
     }
 
-    const pageName = getNewsPageName(newsItem);
+    const pageName = getPalyazatPageName(palyazatItem);
 
     if (!pageName) {
       return;
     }
 
     if (usedPageNames.has(pageName)) {
-      throw new Error(`Duplicate news page slug: ${pageName}`);
+      throw new Error(`Duplicate palyazat page slug: ${pageName}`);
     }
 
     usedPageNames.add(pageName);
 
-    const targetPath = path.join(GENERATED_NEWS_DIR, `${pageName}.html`);
+    const targetPath = path.join(GENERATED_PALYAZAT_DIR, `${pageName}.html`);
     expectedFiles.add(path.resolve(targetPath));
-    fs.writeFileSync(targetPath, newsPageTemplate(newsItem));
+    fs.writeFileSync(targetPath, palyazatPageTemplate(palyazatItem));
   });
 
-  const currentFiles = fs.readdirSync(GENERATED_NEWS_DIR);
+  const currentFiles = fs.readdirSync(GENERATED_PALYAZAT_DIR);
 
   currentFiles.forEach((fileName) => {
-    const filePath = path.join(GENERATED_NEWS_DIR, fileName);
+    const filePath = path.join(GENERATED_PALYAZAT_DIR, fileName);
 
     if (!fileName.endsWith('.html')) {
       return;
@@ -113,7 +113,7 @@ function generateNewsPages(done) {
 // Build the "dist" folder by running all of the below tasks
 // Sass must be run later so UnCSS can search for used classes in the others assets.
 gulp.task('build',
-  gulp.series(clean, generateNewsPages, gulp.parallel(pages, javascript, images, copy), sassBuild, styleGuide)
+  gulp.series(clean, generatePalyazatPages, gulp.parallel(pages, javascript, images, copy), sassBuild, styleGuide)
 );
 
 // Build the site, run the server, and watch for file changes
@@ -261,9 +261,9 @@ function reload(done) {
 // Watch for changes to static assets, pages, Sass, and JavaScript
 function watch() {
   gulp.watch(PATHS.assets, copy);
-  gulp.watch(['src/pages/**/*.html', `!${GENERATED_NEWS_GLOB}`]).on('all', gulp.series(pages, browser.reload));
+  gulp.watch(['src/pages/**/*.html', `!${GENERATED_PALYAZAT_GLOB}`]).on('all', gulp.series(pages, browser.reload));
   gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series(resetPages, pages, browser.reload));
-  gulp.watch('src/data/**/*.{js,json,yml}').on('all', gulp.series(resetPages, generateNewsPages, pages, browser.reload));
+  gulp.watch('src/data/**/*.{js,json,yml}').on('all', gulp.series(resetPages, generatePalyazatPages, pages, browser.reload));
   gulp.watch('src/helpers/**/*.js').on('all', gulp.series(resetPages, pages, browser.reload));
   gulp.watch('src/assets/scss/**/*.scss').on('all', sassBuild);
   gulp.watch('src/assets/js/**/*.js').on('all', gulp.series(javascript, browser.reload));

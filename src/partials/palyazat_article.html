@@ -1,18 +1,18 @@
 {{> title}}
-<article class="card news-article">
+<article class="card palyazat-article">
   <div class="card-section">
     {{#if image}}
-    <div class="news-card-image">
+    <div class="palyazat-card-image">
       <img
-        src="{{root}}assets/img/news/{{image}}.jpg"
+        src="{{root}}assets/img/palyazat/{{image}}.jpg"
         alt="{{title}}"
         loading="lazy"
       />
     </div>
     {{/if}}
-    <dl class="news-card-meta">
+    <dl class="palyazat-card-meta">
       <div>
-        <dt>Léztehozás dátuma</dt>
+        <dt>Létrehozás dátuma</dt>
         <dd>{{#if date}}{{date}}{{else}}Nincs megadva{{/if}}</dd>
       </div>
       <div>
@@ -20,7 +20,7 @@
         <dd>{{#if deadline}}{{deadline}}{{else}}Nincs megadva{{/if}}</dd>
       </div>
     </dl>
-    <div class="{{contentclass}}">{{> markdown_palyazat_content hir=newsKey}}</div>
+    <div class="{{contentclass}}">{{> markdown_palyazat_content hir=palyazatKey}}</div>
     {{#if btn_link}}
     <p class="{{classes}}">
       <a
