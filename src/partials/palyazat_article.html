@@ -1,0 +1,38 @@
+{{> title}}
+<article class="card news-article">
+  <div class="card-section">
+    {{#if image}}
+    <div class="news-card-image">
+      <img
+        src="{{root}}assets/img/news/{{image}}.jpg"
+        alt="{{title}}"
+        loading="lazy"
+      />
+    </div>
+    {{/if}}
+    <dl class="news-card-meta">
+      <div>
+        <dt>Léztehozás dátuma</dt>
+        <dd>{{#if date}}{{date}}{{else}}Nincs megadva{{/if}}</dd>
+      </div>
+      <div>
+        <dt>Beadási határidő</dt>
+        <dd>{{#if deadline}}{{deadline}}{{else}}Nincs megadva{{/if}}</dd>
+      </div>
+    </dl>
+    <div class="{{contentclass}}">{{> markdown_palyazat_content hir=newsKey}}</div>
+    {{#if btn_link}}
+    <p class="{{classes}}">
+      <a
+        class="button small"
+        href="{{root}}assets/pdf/{{btn_link}}"
+        target="_blank"
+        >{{btn_title}}</a
+      >
+    </p>
+    {{/if}}
+    <p>
+      <a href="{{root}}hirek.html">Vissza a hírekhez</a>
+    </p>
+  </div>
+</article>

@@ -7,3 +7,4 @@ dist
 .idea
 package-lock.json
 yarn.lock
+src/pages/hirek/*.html

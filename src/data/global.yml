@@ -12,7 +12,6 @@ alapitvany_tagok:
   - name: "Jójárt Ferenc"
     image: "jojart-ferenc"
 
-
 cegek:
   - name: "Bánffi & Bánffi Kft."
     desc: "A Bánffi & Bánffi Kft. alapítói, a szegedi Bánffi család 1907 óta foglalkozik szikvízkészítéssel. Jelenleg az ország egyik legmodernebb, legnagyobb alapterületű szikvízüzeme."
@@ -43,11 +42,10 @@ cegek:
   - name: "Natural Immune Control System Zrt."
     desc: "A Natural Immune Control System Zrt., mely azért jött létre, hogy egy lehetséges megoldást kínáljon azoknak, akik javítani szeretnének saját és mások életminőségén, 2004 óta forgalmaz, illetve 2010 óta gyárt étrend-kiegészítőket. Célja, hogy – egyedülálló konstrukciójának köszönhetően – termékeivel fogyasztói 1 évre előre biztosíthassák vitamin, ásványi anyag és nyomelem szükségletüket."
 
-
-
 news:
   - title: Pro Talentis – Altajisztikai Ösztöndíj 2026
     content: news11
+    slug: altajisztika-osztondij-2026
     image: altajisztika
     date: 2026. 03. 17.
     deadline:
@@ -56,6 +54,7 @@ news:
 
   - title: Top élelmiszermérnök 2026
     content: news10
+    slug: top-elelmiszermernok-2026
     date: 2025. 12. 18.
     deadline:
     btn_link: top-elelmiszermernok-2026.pdf
@@ -63,9 +62,10 @@ news:
 
   - title: Tanulmányi ösztöndíjpályázat kosárlabdázóknak
     content: news09
+    slug: tanulmanyi-osztondij-kosarlabdazoknak
     date: 2025. 10. 05.
     deadline:
-    btn_link: 
+    btn_link:
     btn_title: PÁLYÁZAT ADATLAP LETÖLTÉSE
 
   - title: Pályázati felhívás
@@ -116,7 +116,6 @@ news:
     deadline:
     btn_link: elelmiszermernok_palyazati-felhivas_2021.pdf
     btn_title: További információ
-
 
 pages:
   - title: Főoldal

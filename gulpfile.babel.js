@@ -7,6 +7,7 @@ import rimraf        from 'rimraf';
 import sherpa        from 'style-sherpa';
 import yaml          from 'js-yaml';
 import fs            from 'fs';
+import path          from 'path';
 import webpackStream from 'webpack-stream';
 import webpack2      from 'webpack';
 import named         from 'vinyl-named';
@@ -17,6 +18,10 @@ import imagemin      from 'gulp-imagemin';
 const sass = require('gulp-sass')(require('sass'));
 const postcss = require('gulp-postcss');
 const uncss = require('postcss-uncss');
+const unsafeYamlTypes = require('js-yaml-js-types').all;
+const YAML_SCHEMA = yaml.DEFAULT_SCHEMA.extend(unsafeYamlTypes);
+const GENERATED_NEWS_DIR = path.join('src', 'pages', 'hirek');
+const GENERATED_NEWS_GLOB = 'src/pages/hirek/**/*.html';
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -26,19 +31,89 @@ const PRODUCTION = !!(yargs.argv.production);
 
 // Load settings from settings.yml
 function loadConfig() {
-  const unsafe = require('js-yaml-js-types').all;
-  const schema = yaml.DEFAULT_SCHEMA.extend(unsafe);
   const ymlFile = fs.readFileSync('config.yml', 'utf8');
-  return yaml.load(ymlFile, {schema});
+  return yaml.load(ymlFile, { schema: YAML_SCHEMA });
 }
 const { PORT, UNCSS_OPTIONS, PATHS } = loadConfig();
 
 console.log(UNCSS_OPTIONS);
 
+function loadYamlFile(filePath) {
+  return yaml.load(fs.readFileSync(filePath, 'utf8'), { schema: YAML_SCHEMA });
+}
+
+function getNewsPageName(newsItem) {
+  return newsItem.slug || newsItem.content;
+}
+
+function newsPageTemplate(newsItem) {
+  const frontMatter = yaml.dump({
+    layout: '2_hasabos',
+    title: newsItem.title,
+    newsKey: newsItem.content,
+    image: newsItem.image || '',
+    date: newsItem.date || '',
+    deadline: newsItem.deadline || '',
+    btn_link: newsItem.btn_link || '',
+    btn_title: newsItem.btn_title || '',
+    classes: newsItem.classes || '',
+    contentclass: newsItem.contentclass || ''
+  }, { lineWidth: -1 });
+
+  return `---\n${frontMatter}---\n{{> palyazat_article}}\n`;
+}
+
+function generateNewsPages(done) {
+  const globalData = loadYamlFile(path.join('src', 'data', 'global.yml'));
+  const newsItems = Array.isArray(globalData.news) ? globalData.news : [];
+  const usedPageNames = new Set();
+  const expectedFiles = new Set();
+
+  fs.mkdirSync(GENERATED_NEWS_DIR, { recursive: true });
+
+  newsItems.forEach((newsItem) => {
+    if (!newsItem.content) {
+      return;
+    }
+
+    const pageName = getNewsPageName(newsItem);
+
+    if (!pageName) {
+      return;
+    }
+
+    if (usedPageNames.has(pageName)) {
+      throw new Error(`Duplicate news page slug: ${pageName}`);
+    }
+
+    usedPageNames.add(pageName);
+
+    const targetPath = path.join(GENERATED_NEWS_DIR, `${pageName}.html`);
+    expectedFiles.add(path.resolve(targetPath));
+    fs.writeFileSync(targetPath, newsPageTemplate(newsItem));
+  });
+
+  const currentFiles = fs.readdirSync(GENERATED_NEWS_DIR);
+
+  currentFiles.forEach((fileName) => {
+    const filePath = path.join(GENERATED_NEWS_DIR, fileName);
+
+    if (!fileName.endsWith('.html')) {
+      return;
+    }
+
+    if (!expectedFiles.has(path.resolve(filePath))) {
+      fs.unlinkSync(filePath);
+    }
+  });
+
+  done();
+}
+
 // Build the "dist" folder by running all of the below tasks
 // Sass must be run later so UnCSS can search for used classes in the others assets.
 gulp.task('build',
-  gulp.series(clean, gulp.parallel(pages, javascript, images, copy), sassBuild, styleGuide)
+  gulp.series(clean, generateNewsPages, gulp.parallel(pages, javascript, images, copy), sassBuild, styleGuide)
 );
 
 // Build the site, run the server, and watch for file changes
@@ -186,9 +261,9 @@ function reload(done) {
 // Watch for changes to static assets, pages, Sass, and JavaScript
 function watch() {
   gulp.watch(PATHS.assets, copy);
-  gulp.watch('src/pages/**/*.html').on('all', gulp.series(pages, browser.reload));
+  gulp.watch(['src/pages/**/*.html', `!${GENERATED_NEWS_GLOB}`]).on('all', gulp.series(pages, browser.reload));
   gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series(resetPages, pages, browser.reload));
-  gulp.watch('src/data/**/*.{js,json,yml}').on('all', gulp.series(resetPages, pages, browser.reload));
+  gulp.watch('src/data/**/*.{js,json,yml}').on('all', gulp.series(resetPages, generateNewsPages, pages, browser.reload));
   gulp.watch('src/helpers/**/*.js').on('all', gulp.series(resetPages, pages, browser.reload));
   gulp.watch('src/assets/scss/**/*.scss').on('all', sassBuild);
   gulp.watch('src/assets/js/**/*.js').on('all', gulp.series(javascript, browser.reload));

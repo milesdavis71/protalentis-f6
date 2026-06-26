@@ -1,0 +1,97 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pro Talentis Universitas AlapĂ­tvĂˇny</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="{{root}}assets/img/favicon.ico"
+    />
+    <link rel="stylesheet" href="{{root}}assets/css/all.min.css" />
+    <link rel="stylesheet" href="{{root}}assets/css/app.css" />
+  </head>
+
+  <body>
+    <style>
+      blockquote {
+        color: #52666f;
+        border-left: 4px solid #ab4d3a;
+        font-size: 100%;
+        font-style: italic;
+        padding-left: 1rem;
+      }
+
+      a {
+        text-decoration: underline;
+      }
+
+      a:hover {
+        color: orange;
+      }
+    </style>
+    <div class="site-shell">{{> top_bar}}{{> grid_3_hasabos}}</div>
+    <script src="{{root}}assets/js/app.js"></script>
+    <script>
+      (function () {
+        var CHECK_INTERVAL = 10000;
+        var VERSION_URL = "{{root}}version.json";
+        var currentVersion = null;
+
+        function checkVersion() {
+          var url = VERSION_URL + "?_=" + Date.now();
+          console.log("[version-check] LekĂ©rĂ©s:", url);
+
+          fetch(url, { cache: "no-store" })
+            .then(function (res) {
+              console.log("[version-check] HTTP stĂˇtusz:", res.status);
+              if (!res.ok) return;
+              return res.json();
+            })
+            .then(function (data) {
+              if (!data || typeof data.version === "undefined") {
+                console.log('[version-check] Nincs "version" mezĹ‘:', data);
+                return;
+              }
+
+              var serverVersion = String(data.version);
+              console.log(
+                "[version-check] Szerver verziĂł:",
+                serverVersion,
+                "| Jelenlegi verziĂł:",
+                currentVersion,
+              );
+
+              if (currentVersion === null) {
+                currentVersion = serverVersion;
+                return;
+              }
+
+              if (serverVersion !== currentVersion) {
+                console.log("[version-check] VERZIĂ“ VĂLTOZOTT â†’ RELOAD");
+
+                var newUrl =
+                  window.location.pathname +
+                  "?v=" +
+                  encodeURIComponent(serverVersion) +
+                  "&_=" +
+                  Date.now() +
+                  window.location.hash;
+
+                console.log("[version-check] NavigĂˇciĂł:", newUrl);
+                window.location.assign(newUrl);
+              }
+            })
+            .catch(function (err) {
+              console.warn("[version-check] Hiba:", err);
+            });
+        }
+
+        checkVersion();
+        setInterval(checkVersion, CHECK_INTERVAL);
+      })();
+    </script>
+  </body>
+</html>

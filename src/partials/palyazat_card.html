@@ -1,4 +1,4 @@
-<button class="news-card card" type="button" data-open="news-modal-{{content}}" aria-controls="news-modal-{{content}}">
+<a class="news-card card" href="{{root}}{{palyazatPath slug content}}">
     <div class="card-section">
         <h2 class="news-card-title h6">{{title}}</h2>
         {{#if image}}
@@ -17,4 +17,4 @@
             </div>
         </dl>
     </div>
-</button>
+</a>
