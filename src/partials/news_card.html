@@ -1,6 +1,11 @@
 <button class="news-card card" type="button" data-open="news-modal-{{content}}" aria-controls="news-modal-{{content}}">
     <div class="card-section">
-        <h2 class="news-card-title h5">{{title}}</h2>
+        <h2 class="news-card-title h6">{{title}}</h2>
+        {{#if image}}
+        <div class="news-card-image">
+            <img src="{{root}}assets/img/news/{{image}}.jpg" alt="{{title}}" loading="lazy">
+        </div>
+        {{/if}}
         <dl class="news-card-meta">
             <div>
                 <dt>Létrehozás dátuma</dt>

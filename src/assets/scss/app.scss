@@ -244,7 +244,7 @@ body {
   display: flex;
   height: 100%;
   text-decoration: none;
-  text-align: left;
+  text-align: center;
   transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
   width: 100%;
 }
@@ -269,6 +269,22 @@ body {
   color: #8b0000;
   line-height: 1.3;
   margin-bottom: 1rem;
+}
+
+.news-card-image {
+  aspect-ratio: 16 / 9;
+  background: #f4f4f4;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  width: 100%;
+}
+
+.news-card-image img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
 }
 
 .news-card-meta,
