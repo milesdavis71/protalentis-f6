@@ -8,8 +8,8 @@
         {{/if}}
         <dl class="palyazat-card-meta">
             <div>
-                <dt>Létrehozás dátuma</dt>
-                <dd>{{#if date}}{{date}}{{else}}Nincs megadva{{/if}}</dd>
+                <dt>Kik adhatják be?</dt>
+                <dd class="palyazat-card-requirements">{{#if requirements}}{{requirements}}{{else}}{{#if requirement}}{{requirement}}{{else}}Nincs megadva{{/if}}{{/if}}</dd>
             </div>
             <div>
                 <dt>Beadási határidő</dt>

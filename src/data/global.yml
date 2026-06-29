@@ -49,6 +49,7 @@ palyazatok:
     image: altajisztika
     date: 2026. 03. 17.
     deadline:
+    requirements: legalább II. évfolyamos Keleti Nyelvek (Altajisztika szakirány) BA, illetve Altajisztika szakirányos MA hallgatók
     btn_link: palyazati_felhivas_altajisztika_osztondij_2026.pdf
     btn_title: PÁLYÁZAT ADATLAP LETÖLTÉSE
 
@@ -57,6 +58,7 @@ palyazatok:
     slug: top-elelmiszermernok-2026
     date: 2025. 12. 18.
     deadline:
+    requirements: élelmiszermérnök BSc és MSc szakos hallgatók, akik ebben a szemeszterben sikeres záróvizsgát tettek, tudományos vagy sport eredményeket értek el.
     btn_link: top-elelmiszermernok-2026.pdf
     btn_title: PÁLYÁZAT ADATLAP LETÖLTÉSE
 
@@ -65,6 +67,7 @@ palyazatok:
     slug: tanulmanyi-osztondij-kosarlabdazoknak
     date: 2025. 10. 05.
     deadline:
+    requirements: Aktív hallgatói jogviszony megléte a támogatás folyósításakor. A pályázó hallgató az SZTE nevét viselő sportszervezetben, szakosztályban sportol, heti rendszerességgel részt vesz az egyesület, szakosztály munkájában.
     btn_link:
     btn_title: PÁLYÁZAT ADATLAP LETÖLTÉSE
 
@@ -72,6 +75,7 @@ palyazatok:
     content: news08
     date: 2025. 08.28.
     deadline:
+    requirements:
     btn_link: palyazati_felhiv_nemz_tan_csapatvers_tamogatasra_2025.pdf
     btn_title: PÁLYÁZAT LETÖLTÉSE
 
@@ -79,6 +83,7 @@ palyazatok:
     content: news07
     date: 2025. 04. 23.
     deadline:
+    requirements:
     btn_link: palyazati_felhivas_Pro-T_tovabbkepzesi_tamogatas_2025.pdf
     btn_title: PÁLYÁZAT LETÖLTÉSE
 
@@ -86,6 +91,7 @@ palyazatok:
     content: news06
     date:
     deadline:
+    requirements:
     btn_link: kivalo_sportolo_kosarlabdazo_palyazat_2023.pdf
     btn_title: Pályázat letöltése
 
@@ -104,16 +110,19 @@ palyazatok:
     content: news03
     date:
     deadline:
+    requirements:
     classes: hide
   - title: Ösztöndíj joghallgatók számára 2022
     content: news02
     date:
     deadline:
+    requirements:
     classes: hide
   - title: Top élelmiszermérnök 2021
     content: news01
     date:
     deadline:
+    requirements:
     btn_link: elelmiszermernok_palyazati-felhivas_2021.pdf
     btn_title: További információ
 

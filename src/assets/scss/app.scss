@@ -308,6 +308,10 @@ body {
   margin: 0;
 }
 
+.palyazat-card-requirements {
+  text-align: left;
+}
+
 @include breakpoint(small only) {
   .site-shell {
     min-height: auto;

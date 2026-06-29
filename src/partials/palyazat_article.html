@@ -10,16 +10,6 @@
       />
     </div>
     {{/if}}
-    <dl class="palyazat-card-meta">
-      <div>
-        <dt>Létrehozás dátuma</dt>
-        <dd>{{#if date}}{{date}}{{else}}Nincs megadva{{/if}}</dd>
-      </div>
-      <div>
-        <dt>Beadási határidő</dt>
-        <dd>{{#if deadline}}{{deadline}}{{else}}Nincs megadva{{/if}}</dd>
-      </div>
-    </dl>
     <div class="{{contentclass}}">{{> markdown_palyazat_content hir=palyazatKey}}</div>
     {{#if btn_link}}
     <p class="{{classes}}">

@@ -53,6 +53,7 @@ function palyazatPageTemplate(palyazatItem) {
       palyazatKey: palyazatItem.content,
       image: palyazatItem.image || "",
       date: palyazatItem.date || "",
+      requirements: palyazatItem.requirements || palyazatItem.requirement || "",
       deadline: palyazatItem.deadline || "",
       btn_link: palyazatItem.btn_link || "",
       btn_title: palyazatItem.btn_title || "",
