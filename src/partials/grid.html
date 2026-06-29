@@ -1,9 +1,9 @@
 <div class="grid-x grid-padding-x">
     {{> grid_header}}
-    <div class="cell medium-3">
+    <div class="cell medium-3{{#if home}} small-order-2 medium-order-1{{/if}}">
         {{> grid_sidebar}}
     </div>
-    <div class="cell small-12 medium-9">
+    <div class="cell small-12 medium-9{{#if home}} small-order-1 medium-order-2{{/if}}">
         {{> body}}
     </div>
 <!--     <div class="cell shrink footer">
