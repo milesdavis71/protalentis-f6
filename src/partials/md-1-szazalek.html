@@ -6,7 +6,11 @@
   <p class="text-center">
   <b>Kérjük, adója 1 százalékával támogassa a Pro Talentis Universitatis Alapítványt</b>, hogy a jövő tehetségei is lehetőséget kapjanak!
 </p>
-  <p class="text-center">
+<p>
+  Az alapítvány webshopjában található könyvekből származó bevételt tehetséggondozó programjainkra fordítjuk.
+
+</p>
+  <p class="text-center" style="margin: 0 0 0">
     <a
       class="button secondary"
       href="https://protalentisuni.shopstart.hu/"
@@ -15,19 +19,21 @@
       > <b>Az Alapítvány webshopja itt</b></a
     >
   </p>
-</div>
+{{#ifpage 'index' 'szegedi_tehetseggondozo_tanacs' 'partnerek' 'aktualis_palyazatok' 'vallalati_osztondij_program' 'javits_osztondij' 'galeria'}}
 
-<div class="callout">
+
 {{#markdown}}
 
-- A weboldalunkon található könyvekből származó bevételt tehetséggondozó programjainkra fordítjuk.
 - Vásároljon könyvet és segítse a támogatásra érdemes egyetemi hallgatókat!
 - Szívesen fogadunk tárgyi adományokat is (pl. festmények, könyvek stb.)
     jótékonysági célra, melyet a webshopon értékesíthetünk, majd a bevételt
     szintén tehetségek támogatására fordítjuk. Az adományokat előzetes
     egyeztetés után, kuratóriumi döntés alapján tudjuk fogadni.
-  </p>
-</div>
 
 {{/markdown}}
+
+{{/ifpage}}
+
+</div>
+
 </div>
