@@ -3,7 +3,7 @@
     <section class="palyazat-preview">
         <div class="grid-x grid-margin-y">
             {{#if sidebar_palyazat_count}}
-            {{#each global.palyazatok}}
+            {{#each (filterBy global.palyazatok "active" true)}}
             {{#lt @index ../sidebar_palyazat_count}}
             <div class="cell small-12">
                 {{> palyazat_card}}
@@ -11,7 +11,7 @@
             {{/lt}}
             {{/each}}
             {{else}}
-            {{#each global.palyazatok}}
+            {{#each (filterBy global.palyazatok "active" true)}}
             <div class="cell small-12">
                 {{> palyazat_card}}
             </div>

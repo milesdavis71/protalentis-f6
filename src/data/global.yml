@@ -44,6 +44,7 @@ cegek:
 
 palyazatok:
   - title: Pro Talentis – Altajisztikai Ösztöndíj 2026
+    active: true
     content: news11
     slug: altajisztika-osztondij-2026
     image: altajisztika
@@ -54,6 +55,7 @@ palyazatok:
     btn_title: PÁLYÁZAT ADATLAP LETÖLTÉSE
 
   - title: Top élelmiszermérnök 2026
+    active: true
     content: news10
     slug: top-elelmiszermernok-2026
     date: 2025. 12. 18.
@@ -63,6 +65,7 @@ palyazatok:
     btn_title: PÁLYÁZAT ADATLAP LETÖLTÉSE
 
   - title: Tanulmányi ösztöndíjpályázat kosárlabdázóknak
+    active: true
     content: news09
     slug: tanulmanyi-osztondij-kosarlabdazoknak
     date: 2025. 10. 05.
@@ -72,6 +75,7 @@ palyazatok:
     btn_title: PÁLYÁZAT ADATLAP LETÖLTÉSE
 
   - title: Pályázati felhívás
+    active: false
     content: news08
     date: 2025. 08.28.
     deadline:
@@ -80,6 +84,7 @@ palyazatok:
     btn_title: PÁLYÁZAT LETÖLTÉSE
 
   - title: Pályázat tehetséggondozásban aktív SZTE munkatársak továbbképzési támogatására a 2024/2025. tanév második félévére
+    active: false
     content: news07
     date: 2025. 04. 23.
     deadline:
@@ -88,6 +93,7 @@ palyazatok:
     btn_title: PÁLYÁZAT LETÖLTÉSE
 
   - title: Kiváló sportoló pályázat kosárlabdázóknak 2023–2024
+    active: false
     content: news06
     date:
     deadline:
@@ -96,29 +102,34 @@ palyazatok:
     btn_title: Pályázat letöltése
 
   - title: Középiskolás tehetségek mentora ösztöndíj
+    active: false
     content: news05
     date:
     deadline:
     btn_link: középisk_tehets_mentora_pályáz_felhív_2022_2023.pdf
     btn_title: További információ
   - title: Kiváló sportoló pályázat kosárlabdázóknak 2022–2023
+    active: false
     content: news04
     date:
     deadline:
     classes: hide
   - title: Vállalati ösztöndíjprogram
+    active: false
     content: news03
     date:
     deadline:
     requirements:
     classes: hide
   - title: Ösztöndíj joghallgatók számára 2022
+    active: false
     content: news02
     date:
     deadline:
     requirements:
     classes: hide
   - title: Top élelmiszermérnök 2021
+    active: false
     content: news01
     date:
     deadline:
@@ -181,7 +192,7 @@ pages:
       - fa-duotone
       - fa-file-certificate
     menu: sub
-    subtitle1: Aktuális pályázatok
+    subtitle1: Aktuális és nem aktuális pályázatok
     subpage1: aktualis_palyazatok
     subtitle2: Vállalati Ösztöndíj Program
     subpage2: vallalati_osztondij_program

@@ -3,17 +3,15 @@ layout: 2_hasabos
 title: Aktuális és nem aktuális pályázatok
 ---
 
-{{> title}}
-
+{{>title}}
 <div class="callout secondary">
-  <h2 class="h4 text-center">Aktuális pályázatok</h4>
+  <h4 class="text-center">Aktuális pályázatok</h4>
   {{> palyazat_cards}}
 </div>
-<div class="callout">
-<h2 class="h4 text-center">Nem aktuális pályázatok</h2>
+
+<h2 class="h4">Nem aktuális pályázatok</h2>
 <div class="palyazat-grid grid-x grid-margin-x grid-margin-y align-stretch">
   {{#each (filterBy global.palyazatok "active" false)}}
   <div class="cell small-12 medium-6 large-4">{{> palyazat_card}}</div>
   {{/each}}
-</div>
 </div>
