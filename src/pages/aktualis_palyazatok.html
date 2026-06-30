@@ -9,7 +9,7 @@ title: Aktuális és nem aktuális pályázatok
   <h2 class="h4 text-center">Aktuális pályázatok</h4>
   {{> palyazat_cards}}
 </div>
-<div class="callout">
+<div class="callout primary">
 <h2 class="h4 text-center">Nem aktuális pályázatok</h2>
 <div class="palyazat-grid grid-x grid-margin-x grid-margin-y align-stretch">
   {{#each (filterBy global.palyazatok "active" false)}}
