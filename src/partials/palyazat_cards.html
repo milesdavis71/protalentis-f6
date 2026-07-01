@@ -1,15 +1,29 @@
 <section class="palyazat-preview">
-    <div class="grid-x grid-margin-x align-stretch">
-        {{#each (filterBy global.palyazatok "active" true)}}
-        {{#lt @index 3}}
-        <div class="cell small-12 medium-4">
-            {{> palyazat_card}}
-        </div>
-        {{/lt}}
-        {{else}}
+  <div class="grid-x grid-margin-x align-stretch">
+    {{#each (filterBy global.palyazatok "active" true)}} {{#lt @index 3}}
+    <div class="cell small-12 medium-4">{{> palyazat_card}}</div>
+    {{/lt}} {{else}}
+    <div class="cell small-12">
+      <div class="grid-x grid-margin-x">
         <div class="cell small-12">
-            <p>Jelenleg nincs elérhető pályázatunk, tekintse meg korábbi pályázatainkat.</p>
+          <p class="text-center">
+            <b>Jelenleg nincs aktuális pályázatunk, tekintse meg az összes elérhető pályázatunkat:</b>
+          </p>
+          <p class="text-center" style="margin: 0;">
+            <a
+              class="button secondary"
+              href="{{root}}aktualis_palyazatok.html#nem-aktualis-palyazatok"
+              style="text-decoration: none"
+            >
+              <b>Összes elérhető pályázatunk</b>
+            </a>
+          </p>
         </div>
-        {{/each}}
+        <div class="cell small-12">
+          <img src="{{root}}/assets/img/nincs-aktualis-palyazat.jpg" alt="" />
+        </div>
+      </div>
     </div>
+    {{/each}}
+  </div>
 </section>

@@ -193,7 +193,7 @@ pages:
       - fa-file-certificate
     menu: sub
     subtitle1: Aktuális és nem aktuális pályázatok
-    subpage1: aktualis_palyazatok
+    subpage1: palyazatok
     subtitle2: Vállalati Ösztöndíj Program
     subpage2: vallalati_osztondij_program
     subtitle3: Pro Tanentis Díj
