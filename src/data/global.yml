@@ -44,7 +44,7 @@ cegek:
 
 palyazatok:
   - title: Pro Talentis – Altajisztikai Ösztöndíj 2026
-    active: true
+    active: false
     content: news11
     slug: altajisztika-osztondij-2026
     image: altajisztika
@@ -55,7 +55,7 @@ palyazatok:
     btn_title: PÁLYÁZAT ADATLAP LETÖLTÉSE
 
   - title: Top élelmiszermérnök 2026
-    active: true
+    active: false
     content: news10
     slug: top-elelmiszermernok-2026
     date: 2025. 12. 18.
@@ -65,7 +65,7 @@ palyazatok:
     btn_title: PÁLYÁZAT ADATLAP LETÖLTÉSE
 
   - title: Tanulmányi ösztöndíjpályázat kosárlabdázóknak
-    active: true
+    active: false
     content: news09
     slug: tanulmanyi-osztondij-kosarlabdazoknak
     date: 2025. 10. 05.
@@ -193,7 +193,7 @@ pages:
       - fa-file-certificate
     menu: sub
     subtitle1: Aktuális és nem aktuális pályázatok
-    subpage1: aktualis_palyazatok
+    subpage1: palyazatok
     subtitle2: Vállalati Ösztöndíj Program
     subpage2: vallalati_osztondij_program
     subtitle3: Pro Tanentis Díj

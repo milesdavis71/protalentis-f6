@@ -7,14 +7,14 @@ sidebar_palyazat_count: 3
 {{> title}}
 
 <div class="callout secondary">
-  <h2 class="h4 text-center">Aktuális pályázatok</h4>
-  {{> palyazat_cards}}
+  <h2 class="h4 text-center">Aktuális pályázatok</h2>
+  {{> palyazat_cards_page}}
 </div>
 <div class="callout primary">
-<h2 class="h4 text-center">Nem aktuális pályázatok</h2>
-<div class="palyazat-grid grid-x grid-margin-x grid-margin-y align-stretch">
-  {{#each (filterBy global.palyazatok "active" false)}}
-  <div class="cell small-12 medium-6 large-4">{{> palyazat_card}}</div>
-  {{/each}}
-</div>
+  <h2 id="nem-aktualis-palyazatok" class="h4 text-center">Nem aktuális pályázatok</h2>
+  <div class="palyazat-grid grid-x grid-margin-x grid-margin-y align-stretch">
+    {{#each (filterBy global.palyazatok "active" false)}}
+    <div class="cell small-12 medium-6 large-4">{{> palyazat_card}}</div>
+    {{/each}}
+  </div>
 </div>
