@@ -186,48 +186,44 @@ body {
   margin-bottom: 1rem;
 }
 
-.mobile-nav {
-  background: #fff;
-  border: 1px solid rgba($brand-blue, 0.15);
-  border-radius: 0.75rem;
-  box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.06);
-  margin-bottom: 1rem;
-}
-
-.mobile-nav-summary {
+.mobile-nav-title {
   align-items: center;
-  cursor: pointer;
+  background: $black;
+  color: $white;
   display: flex;
-  justify-content: space-between;
-  list-style: none;
-  padding: 0.9rem 1rem;
+  margin-bottom: 0;
+  padding: 0.75rem 1rem;
 }
 
-.mobile-nav-summary::-webkit-details-marker {
-  display: none;
-}
-
-.mobile-nav-brand {
-  color: $brand-blue;
+.mobile-nav-title .title-bar-title {
   font-weight: 700;
-}
-
-.mobile-nav-toggle {
-  color: $brand-burgundy;
-  font-size: 0.95rem;
-  font-weight: 700;
-}
-
-.mobile-nav[open] .mobile-nav-summary {
-  border-bottom: 1px solid rgba($brand-blue, 0.15);
+  margin-left: 0.65rem;
 }
 
 .mobile-nav-panel {
+  background: $black;
+  border: 1px solid rgba($white, 0.15);
+  border-top: 0;
+  box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.06);
+  margin-bottom: 1rem;
   padding: 0.5rem 1rem 1rem;
 }
 
 .mobile-nav-panel #mobile-menu {
   margin-bottom: 0;
+}
+
+.mobile-nav-panel #mobile-menu a {
+  box-shadow: inset 0 -1px rgba($white, 0.18);
+  color: $white;
+}
+
+.mobile-nav-panel #mobile-menu a:hover,
+.mobile-nav-panel #mobile-menu a:focus,
+.mobile-nav-panel #mobile-menu .is-active > a,
+.mobile-nav-panel #mobile-menu .is-current > a,
+.mobile-nav-panel #mobile-menu .is-accordion-submenu-parent[aria-expanded='true'] > a {
+  color: mix(get-color(secondary), $white, 35%);
 }
 
 .palyazat-preview,

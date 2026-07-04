@@ -1,4 +1,4 @@
-<div class="top-bar">
+<div class="top-bar show-for-medium">
   <div class="top-bar-left">
     <ul class="dropdown menu" data-dropdown-menu>
       <li class="menu-text"><a href="{{root}}index.html">{{#colorSpan "primary" shade=20}}Pro Talentis Universitatis Alapítvány{{/colorSpan}}</a></li>
@@ -22,5 +22,14 @@
       <li><input type="search" placeholder="Search"></li>
       <li><button type="button" class="button">Search</button></li>
     </ul> -->
+  </div>
+</div>
+<div class="hide-for-medium">
+  <div class="title-bar mobile-nav-title" data-responsive-toggle="mobile-menu-panel" data-hide-for="medium">
+    <button class="menu-icon" type="button" data-toggle="mobile-menu-panel" aria-label="Menü"></button>
+    <div class="title-bar-title">Menü</div>
+  </div>
+  <div class="mobile-nav-panel" id="mobile-menu-panel" data-animate="slide-in-down slide-out-up">
+    {{> navigation_menu menuId="mobile-menu" menuClass="vertical menu accordion-menu" hideLogo=true}}
   </div>
 </div>

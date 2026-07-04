@@ -1,4 +1,5 @@
 <aside class="callout secondary">
+    {{#anyBy global.palyazatok "active" true}}
     <h2 class="h5 text-center">Aktuális pályázatok</h2>
     <section class="palyazat-preview">
         <div class="grid-x grid-margin-y">
@@ -19,4 +20,26 @@
             {{/if}}
         </div>
     </section>
+    {{else}}
+    <h2 class="h5 text-center">Nem aktuális pályázatok</h2>
+    <section class="palyazat-preview">
+        <div class="grid-x grid-margin-y">
+            {{#if sidebar_palyazat_count}}
+            {{#each (filterBy global.palyazatok "active" false)}}
+            {{#lt @index ../sidebar_palyazat_count}}
+            <div class="cell small-12">
+                {{> palyazat_card}}
+            </div>
+            {{/lt}}
+            {{/each}}
+            {{else}}
+            {{#each (filterBy global.palyazatok "active" false)}}
+            <div class="cell small-12">
+                {{> palyazat_card}}
+            </div>
+            {{/each}}
+            {{/if}}
+        </div>
+    </section>
+    {{/anyBy}}
 </aside>
