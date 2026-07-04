@@ -202,6 +202,48 @@ $keystroke-padding: rem-calc(2 4 0);
 $keystroke-radius: $global-radius;
 $abbr-underline: 1px dotted $black;
 
+// Replace the default unordered list bullet with a right-pointing hand emoji.
+ul {
+  list-style: none;
+  margin-left: 0;
+
+  li {
+    list-style: none;
+    position: relative;
+    padding-left: 1.75rem;
+
+    &::marker {
+      content: '';
+    }
+
+    &::before {
+      content: '👉';
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+  }
+}
+
+.menu,
+.dropdown.menu,
+.vertical.menu,
+.accordion-menu,
+.drilldown,
+.top-bar ul {
+  li {
+    padding-left: 0;
+
+    &::marker {
+      content: initial;
+    }
+
+    &::before {
+      content: none;
+    }
+  }
+}
+
 // 5. Typography Helpers
 // ---------------------
 
