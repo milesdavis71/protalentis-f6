@@ -1,68 +1,107 @@
-# ZURB Template
+# Pro Talentis F6
 
-**Please open all issues with this template on the main [Foundation for Sites](https://github.com/foundation/foundation-sites/issues) repo.**
+Statikus Foundation 6.9 alapú weboldal Panini templatinggel, Gulp builddel és Markdown-alapú tartalomkezeléssel.
 
-This is the official ZURB Template for use with [Foundation for Sites](https://get.foundation/sites/docs/). We use this template at ZURB to deliver static code to our clients. It has a Gulp-powered build system with these features:
+## Követelmények
 
-- Handlebars HTML templates with Panini
-- Sass compilation and prefixing
-- JavaScript module bundling with webpack
-- Built-in BrowserSync server
-- For production builds:
-  - CSS compression
-  - JavaScript module bundling with webpack
-  - Image compression
+- Node.js 18+ ajánlott
+- npm
 
-## Installation
-
-To use this template, your computer needs:
-
-- [NodeJS](https://nodejs.org/en/) (Version 12 or greater recommended)
-- [Git](https://git-scm.com/)
-
-This template can be installed with the Foundation CLI, or downloaded and set up manually.
-
-### Using the CLI
-
-Install the Foundation CLI with this command:
+## Telepítés
 
 ```bash
-npm install foundation-cli --global
+npm install
 ```
 
-Use this command to set up a blank Foundation for Sites project with this template:
+## Fejlesztés
+
+Fejlesztői szerver indítása:
 
 ```bash
-foundation new --framework sites --template zurb
+npm run dev
 ```
 
-The CLI will prompt you to give your project a name. The template will be downloaded into a folder with this name.
-
-Now `cd` to your project name and to start your project run
+Build parancsok:
 
 ```bash
-foundation watch
+npm run build
 ```
-
-### Manual Setup
-
-To manually set up the template, first download it with Git:
 
 ```bash
-git clone https://github.com/foundation/foundation-zurb-template projectname
+npm run build:prod
 ```
 
-Then open the folder in your command line, and install the needed dependencies:
+Development build watch/server nélkül:
 
 ```bash
-cd projectname
-yarn
+npm run build:dev
 ```
 
-Finally, run `yarn start` to run Gulp. Your finished site will be created in a folder called `dist`, viewable at this URL:
+A kimenet a `dist/` mappába kerül.
 
-```
-http://localhost:8000
+## Fő szerkezet
+
+- `src/pages/`: oldalak frontmatterrel és layout-hivatkozásokkal
+- `src/layouts/`: Panini layoutok
+- `src/partials/`: újrafelhasználható sablonrészek
+- `src/content/`: hosszabb szerkeszthető markdown tartalmak
+- `src/data/`: YAML adatok
+- `src/helpers/`: egyedi Panini/Handlebars helperek
+- `src/assets/`: képek, scss, js, pdf
+
+## Markdown tartalmak
+
+A hosszabb szöveges tartalmak már nem inline `{{#markdown}}` blokkokban vannak, hanem a `src/content/` alatt.
+
+Mappák:
+
+- `src/content/pages/body/`: normál oldaltörzsek
+- `src/content/pages/elerhetosegek/`: az elérhetőségek oldal külön blokkjai
+- `src/content/fragments/home/`: nyitólaphoz tartozó markdown fragmentek
+- `src/content/fragments/sidebar/`: sidebar markdown fragmentek
+- `src/content/palyazatok/news/`: pályázati és hír tartalmak
+- `src/content/partners/modals/`: partner modál szövegek
+
+Ezeket a [src/helpers/mdFile.js](C:/Users/heves/vscode_projects/protalentis-f6/src/helpers/mdFile.js:1) helper tölti be.
+
+## Szerkesztési szabály
+
+- Hosszabb szöveges tartalom módosításához a megfelelő `.md` fájlt szerkeszd a `src/content/` alatt.
+- Layout vagy markup módosításához a `src/pages/` vagy `src/partials/` fájlokat szerkeszd.
+- Frontmatter mezőknél YAML szintaxis érvényes.
+- Tartalmi módosítás után mindig futtasd:
+
+```bash
+npm run build
 ```
 
-To create compressed, production-ready assets, run `yarn run build`.
+Ez gyorsan kiszűri a YAML, Handlebars és Markdown renderelési hibákat.
+
+## Automatikusan generált pályázat oldalak
+
+A `src/data/global.yml` pályázati adataiból a build generál oldalfájlokat a `src/pages/hirek/` alá. Ezeket nem érdemes kézzel szerkeszteni, mert újragenerálódnak.
+
+Kapcsolódó részek:
+
+- adatforrás: `src/data/global.yml`
+- generálás: `gulpfile.babel.js`
+- tartalmi törzs: `src/content/palyazatok/news/`
+
+## Gyakori feladatok
+
+Új normál oldal tartalmának módosítása:
+
+1. keresd meg az oldal `.html` fájlját a `src/pages/` alatt
+2. az ott megadott `title` alapján keresd meg a megfelelő `.md` fájlt a `src/content/pages/body/` alatt
+3. szerkesztés után futtasd a buildet
+
+Új partner modál szövegének módosítása:
+
+1. nyisd meg a megfelelő fájlt a `src/content/partners/modals/` alatt
+2. szerkesztés után futtasd a buildet
+
+Új pályázati hír tartalmának módosítása:
+
+1. ellenőrizd a kulcsot a `src/data/global.yml` fájlban
+2. szerkeszd a megfelelő `.md` fájlt a `src/content/palyazatok/news/` alatt
+3. futtasd a buildet

@@ -1,13 +1,15 @@
 {
-  "name": "foundation-zurb-template",
+  "name": "protalentis-f6",
   "version": "1.0.0",
-  "description": "Official Template for Foundation for Sites.",
+  "description": "Pro Talentis Universitatis Alapitvany static site built with Foundation 6, Panini, and Gulp.",
   "main": "gulpfile.babel.js",
   "scripts": {
-    "start": "gulp",
-    "build": "gulp build --production"
+    "dev": "gulp",
+    "build": "npm run build:prod",
+    "build:dev": "gulp build",
+    "build:prod": "gulp build --production"
   },
-  "author": "Foundation Yetinauts <contact@get.foundation> (https://get.foundation)",
+  "author": "Pro Talentis",
   "license": "MIT",
   "dependencies": {
     "foundation-sites": "6.9.0",
@@ -49,14 +51,6 @@
     "webpack": "^5.52.1",
     "webpack-stream": "^7.0.0",
     "yargs": "^17.1.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/zurb/foundation-zurb-template.git"
-  },
-  "bugs": {
-    "url": "https://github.com/zurb/foundation-sites/issues",
-    "email": "foundation@zurb.com"
   },
   "private": true,
   "browserslist": [

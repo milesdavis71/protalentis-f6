@@ -13,23 +13,7 @@
       <a class="button secondary" href="https://protalentisuni.shopstart.hu/" target="_blank" style="text-decoration: none"> <b>Az Alapítvány webshopja itt</b></a>
     </p>
 
-    {{#ifpage 'index'
-    'szegedi_tehetseggondozo_tanacs'
-    'partnerek'
-    'aktualis_palyazatok'
-    'vallalati_osztondij_program'
-    'javits_osztondij'
-    'galeria'}}
-
-    {{#markdown}}
-    - Vásároljon könyvet és segítse a támogatásra érdemes egyetemi hallgatókat!
-    - Szívesen fogadunk tárgyi adományokat is (pl. festmények, könyvek stb.)
-    jótékonysági célra, melyet a webshopon értékesíthetünk, majd a bevételt
-    szintén tehetségek támogatására fordítjuk. Az adományokat előzetes
-    egyeztetés után, kuratóriumi döntés alapján tudjuk fogadni.
-
-    {{/markdown}}
-    {{/ifpage}}
+    {{> content_sidebar_1_szazalek}}
 
   </div>
 </div>

@@ -308,6 +308,9 @@ function watch() {
   gulp
     .watch("src/helpers/**/*.js")
     .on("all", gulp.series(resetPages, pages, browser.reload));
+  gulp
+    .watch("src/content/**/*.md")
+    .on("all", gulp.series(pages, browser.reload));
   gulp.watch("src/assets/scss/**/*.scss").on("all", sassBuild);
   gulp
     .watch("src/assets/js/**/*.js")
