@@ -202,7 +202,7 @@ $keystroke-padding: rem-calc(2 4 0);
 $keystroke-radius: $global-radius;
 $abbr-underline: 1px dotted $black;
 
-// Replace the default unordered list bullet with a right-pointing hand emoji.
+// Replace the default unordered list bullet with a hand pointer character.
 ul {
   list-style: none;
   margin-left: 0;
@@ -210,17 +210,21 @@ ul {
   li {
     list-style: none;
     position: relative;
-    padding-left: 1.75rem;
+    padding-left: 1.5rem;
 
     &::marker {
       content: '';
     }
 
     &::before {
-      content: '👉';
+      content: '☛';
+      color: rgba($brand-blue, 0.8);
+      font-family: inherit;
+      font-size: 1.4rem;
+      font-weight: inherit;
       left: 0;
       position: absolute;
-      top: 0;
+      top: -0.35rem;
     }
   }
 }
