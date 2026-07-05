@@ -1,6 +1,5 @@
-<div class="callout primary">
-  {{lead}}
-</div>
+{{>common-lead-callout-primary}}
+
 
 **Az Alapítvány célja:**
 
@@ -11,4 +10,8 @@
 - {{#colorSpan "secondary"}}**A Szegedi Tehetséggondozó Tanács**{{/colorSpan}} által meghatározott stratégiai célokhoz forrás biztosítása.
 - {{#colorSpan "secondary"}}**Az SZTE Junior Akadémia**{{/colorSpan}} tevékenységének támogatása.
 
-<img class="thumbnail" src="{{root}}/assets/img/{{img}}.jpg">
+
+{{>common-image-in-thumb}}
+
+
+

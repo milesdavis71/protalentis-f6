@@ -170,7 +170,7 @@ pages:
     icon:
       - fa-duotone
       - fa-user-graduate
-    page: bemutatkozas
+    page: szte_junior_akademia
     nolink: hide
 
   - title: A Szegedi Tehetséggondozó Tanács

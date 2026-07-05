@@ -1,3 +1,5 @@
+{{>common-lead-callout-primary}}
+
 <blockquote>
   A Szegedi Tudományegyetem és Szeged Megyei Jogú Város Önkormányzata a szegedi tehetséggondozás eredményeinek megőrzése és fejlesztése érdekében összehangolni igyekszik a középiskolás, valamint az Egyetemmel hallgatói jogviszonyban álló tehetségek felkarolását, gondozását. E cél elérésének egyik eszközeként 2006-ban alapították meg a Tehetséggondozó Tanácsot.
 </blockquote>

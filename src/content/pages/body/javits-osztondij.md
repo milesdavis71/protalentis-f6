@@ -1,3 +1,4 @@
+{{>common-lead-callout-primary}}
 <blockquote>
   A „Javíts!” ösztöndíjat a Pro Talentis Universitatis Alapítvány hirdeti meg az SZTE Junior Akadémiával együttműködve, az SZTE Középiskolai Partneri Program iskoláiban, melynek eredményeként iskolánként három ösztöndíj kerül kiosztásra.
 </blockquote>

@@ -1,3 +1,5 @@
+{{>common-lead-callout-primary}}
+
 <blockquote>
   A 2008-ban megalakult SZTE Tehetségpont célja a Szegedi Tudományegyetemen működő tehetséggondozó programok összefogása, a tehetséges hallgatók felkutatása és támogatása.
 </blockquote>
