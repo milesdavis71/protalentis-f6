@@ -1,7 +1,4 @@
 {{>common-lead-callout-primary}}
-<blockquote>
-  A „Javíts!” ösztöndíjat a Pro Talentis Universitatis Alapítvány hirdeti meg az SZTE Junior Akadémiával együttműködve, az SZTE Középiskolai Partneri Program iskoláiban, melynek eredményeként iskolánként három ösztöndíj kerül kiosztásra.
-</blockquote>
 
 Az SZTE Középiskolai Partneri Program iskoláit és az iskolai koordinátorok neveit [itt](https://juniorakademia.szte.hu/kozepiskolai-partneri-program/#partneriskolak) találja.
 
@@ -16,7 +13,7 @@ Az SZTE Középiskolai Partneri Program iskoláit és az iskolai koordinátorok 
 **III. díj 10.000 Ft**<br>
 (+ 20% kedvezmény egy emelt szintű érettségi tanfolyamon való részvétel esetén a következő tanévben)
 
-*(a díjazás iskolánként értendő)*
+_(a díjazás iskolánként értendő)_
 
 <p class="text-center"> <img class="thumbnail" src="{{root}}/assets/img/javits_osztondij.jpg"> </p>
 
