@@ -196,8 +196,19 @@ body {
 }
 
 .mobile-nav-title .title-bar-title {
+  flex: 0 0 auto;
   font-weight: 700;
   margin-left: 0.65rem;
+}
+
+.mobile-nav-foundation {
+  flex: 1 1 auto;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-left: auto;
+  min-width: 0;
+  padding-left: 1rem;
+  text-align: right;
 }
 
 .mobile-nav-panel {
