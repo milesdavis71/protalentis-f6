@@ -319,6 +319,62 @@ body {
   text-align: left;
 }
 
+.site-footer {
+  border-top: 2px solid get-color(primary);
+  color: #52666f;
+  margin-top: 2px;
+  padding: 1.25rem 0;
+}
+
+.site-footer-inner {
+  align-items: center;
+  display: grid;
+  gap: 1rem 2rem;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr) auto;
+}
+
+.site-footer-brand {
+  align-items: center;
+  color: $brand-blue;
+  display: inline-flex;
+  font-weight: 700;
+  gap: 0.75rem;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.site-footer-brand:hover,
+.site-footer-brand:focus {
+  color: $brand-burgundy;
+  text-decoration: none;
+}
+
+.site-footer-logo {
+  flex: 0 0 auto;
+  height: auto;
+  width: 72px;
+}
+
+.site-footer-data {
+  color: $brand-blue;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.site-footer-data strong {
+  font-weight: 700;
+}
+
+.site-footer-actions {
+  justify-self: end;
+}
+
+.site-footer-button {
+  margin-bottom: 0;
+  text-decoration: none;
+}
+
 @include breakpoint(small only) {
   .site-shell {
     min-height: auto;
@@ -326,6 +382,15 @@ body {
 
   .site-shell > .grid-x {
     padding-top: 0.75rem;
+  }
+
+  .site-footer-inner {
+    align-items: flex-start;
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer-actions {
+    justify-self: start;
   }
 }
 
