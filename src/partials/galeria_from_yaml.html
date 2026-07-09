@@ -1,27 +1,25 @@
-
 <div class="cell medium-9 medium-cell-block-y">
 
   <div class="content">
-    <!-- XY Grid: 3 oszlop medium felett, 2 oszlop kisebb kijelzőn -->
     <div class="grid-x grid-margin-x grid-margin-y small-up-1 medium-up-2 large-up-3 gallery-grid"
          data-gallery="{{slug}}">
 
-      {{#range 1 count pad=3}}
+      {{#galleryImages slug}}
       <div class="cell">
         <a
-          href="/assets/img/{{../slug}}/full/{{this}}_full.jpg"
+          href="{{full}}"
           class="js-lightbox-item"
-          data-full="/assets/img/{{../slug}}/full/{{this}}_full.jpg"
+          data-full="{{full}}"
           data-gallery-item
         >
           <img
-            src="/assets/img/{{../slug}}/thumb/{{this}}_thumb.jpg"
-            alt="{{../title}} – {{this}}"
+            src="{{thumb}}"
+            alt="{{alt}}"
             loading="lazy"
           >
         </a>
       </div>
-      {{/range}}
+      {{/galleryImages}}
 
     </div>
   </div>

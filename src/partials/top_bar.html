@@ -1,7 +1,7 @@
 <div class="top-bar show-for-medium">
   <div class="top-bar-left">
     <ul class="dropdown menu" data-dropdown-menu>
-      <li class="menu-text"><a href="{{root}}index.html">{{#colorSpan "primary" shade=20}}Pro Talentis Universitatis Alapítvány{{/colorSpan}}</a></li>
+      <li class="menu-text"><a href="{{routePath root 'index'}}">{{#colorSpan "primary" shade=20}}Pro Talentis Universitatis Alapítvány{{/colorSpan}}</a></li>
       <!-- <li>
         <a href="#">One</a>
         <ul class="menu vertical">
@@ -12,7 +12,7 @@
       </li> -->
       {{#each global.topBar}}
       <li{{#ifpage page subpage1 subpage2 subpage3}} class="is-active"{{/ifpage}}>
-        <a href="{{root}}{{url}}"{{#ifpage page subpage1 subpage2 subpage3}} aria-current="true"{{/ifpage}}>{{title}}</a>
+        <a href="{{routePath root url}}"{{#ifpage page subpage1 subpage2 subpage3}} aria-current="true"{{/ifpage}}>{{title}}</a>
       </li>
       {{/each}}
     </ul>

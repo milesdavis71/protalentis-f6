@@ -21,6 +21,19 @@ const unsafeYamlTypes = require("js-yaml-js-types").all;
 const YAML_SCHEMA = yaml.DEFAULT_SCHEMA.extend(unsafeYamlTypes);
 const GENERATED_PALYAZAT_DIR = path.join("src", "pages", "hirek");
 const GENERATED_PALYAZAT_GLOB = "src/pages/hirek/**/*.html";
+const HTACCESS_RULES = `Options -MultiViews
+RewriteEngine On
+
+# Redirect direct .html requests to clean URLs.
+RewriteCond %{THE_REQUEST} \\s/+(.+?)\\.html[\\s?] [NC]
+RewriteRule ^ %1 [R=301,L]
+
+# Serve extensionless page URLs from their generated .html files.
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+`;
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -66,6 +79,14 @@ function palyazatPageTemplate(palyazatItem) {
   return `---\n${frontMatter}---\n{{> palyazat_article}}\n`;
 }
 
+function writeFileIfChanged(filePath, contents) {
+  if (fs.existsSync(filePath) && fs.readFileSync(filePath, "utf8") === contents) {
+    return;
+  }
+
+  fs.writeFileSync(filePath, contents);
+}
+
 function generatePalyazatPages(done) {
   const globalData = loadYamlFile(path.join("src", "data", "global.yml"));
   const palyazatItems = Array.isArray(globalData.palyazatok)
@@ -94,8 +115,9 @@ function generatePalyazatPages(done) {
     usedPageNames.add(pageName);
 
     const targetPath = path.join(GENERATED_PALYAZAT_DIR, `${pageName}.html`);
+    const pageContents = palyazatPageTemplate(palyazatItem);
     expectedFiles.add(path.resolve(targetPath));
-    fs.writeFileSync(targetPath, palyazatPageTemplate(palyazatItem));
+    writeFileIfChanged(targetPath, pageContents);
   });
 
   const currentFiles = fs.readdirSync(GENERATED_PALYAZAT_DIR);
@@ -122,7 +144,7 @@ gulp.task(
   gulp.series(
     clean,
     generatePalyazatPages,
-    gulp.parallel(pages, javascript, images, copy),
+    gulp.parallel(pages, javascript, images, copy, routing),
     sassBuild,
     styleGuide,
   ),
@@ -141,6 +163,12 @@ function clean(done) {
 // This task skips over the "img", "js", and "scss" folders, which are parsed separately
 function copy() {
   return gulp.src(PATHS.assets).pipe(gulp.dest(PATHS.dist + "/assets"));
+}
+
+function routing(done) {
+  fs.mkdirSync(PATHS.dist, { recursive: true });
+  fs.writeFileSync(path.join(PATHS.dist, ".htaccess"), HTACCESS_RULES);
+  done();
 }
 
 // Copy page templates into finished HTML files
@@ -279,9 +307,45 @@ function server(done) {
     {
       server: PATHS.dist,
       port: PORT,
+      middleware: [cleanUrlMiddleware],
     },
     done,
   );
+}
+
+function cleanUrlMiddleware(req, res, next) {
+  const [pathname, queryString] = req.url.split("?");
+  const query = queryString ? `?${queryString}` : "";
+
+  if (pathname.endsWith(".html")) {
+    const cleanPath = pathname.replace(/\.html$/, "") || "/";
+    res.writeHead(302, { Location: `${cleanPath}${query}` });
+    res.end();
+    return;
+  }
+
+  if (pathname === "/" || path.extname(pathname)) {
+    next();
+    return;
+  }
+
+  let decodedPath;
+
+  try {
+    decodedPath = decodeURIComponent(pathname).replace(/^\/+/, "");
+  } catch (error) {
+    next();
+    return;
+  }
+
+  const distRoot = path.resolve(PATHS.dist);
+  const htmlPath = path.resolve(distRoot, `${decodedPath}.html`);
+
+  if (htmlPath.startsWith(distRoot) && fs.existsSync(htmlPath)) {
+    req.url = `${pathname}.html${query}`;
+  }
+
+  next();
 }
 
 // Reload the browser with BrowserSync
@@ -317,7 +381,7 @@ function watch() {
     .on("all", gulp.series(javascript, browser.reload));
   gulp
     .watch("src/assets/img/**/*")
-    .on("all", gulp.series(images, browser.reload));
+    .on("all", gulp.series(resetPages, pages, images, browser.reload));
   gulp
     .watch("src/styleguide/**")
     .on("all", gulp.series(styleGuide, browser.reload));

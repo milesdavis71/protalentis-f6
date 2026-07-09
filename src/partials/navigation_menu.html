@@ -1,6 +1,6 @@
 {{#unless hideLogo}}
 <p class="text-center navigation-logo">
-    <a class="site-logo-link" href="{{root}}index.html" aria-label="Ugrás a főoldalra">
+    <a class="site-logo-link" href="{{routePath root 'index'}}" aria-label="Ugrás a főoldalra">
         <img class="site-logo" src="{{root}}assets/img/pro-talentis-logo.svg" alt="Pro Talentis Universitatis Alapítvány">
     </a>
 </p>
@@ -11,7 +11,7 @@
         {{#if link}}
         <a href="#">{{#if icon}}<i class="{{faClassList icon ' '}}" aria-hidden="true"></i>{{/if}}<span class="menu-label">{{title}}</span></a>
         {{else}}
-        <a href="{{root}}{{page}}.html">{{#if icon}}<i class="{{faClassList icon ' '}}" aria-hidden="true"></i>{{/if}}<span class="menu-label">{{title}}</span></a>
+        <a href="{{routePath root page}}">{{#if icon}}<i class="{{faClassList icon ' '}}" aria-hidden="true"></i>{{/if}}<span class="menu-label">{{title}}</span></a>
         {{/if}}
         {{> submenu type=menu}}
     </li>

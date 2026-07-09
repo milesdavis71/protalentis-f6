@@ -1,16 +1,16 @@
 {{#ifequal type 'sub'}}
 <ul class="menu vertical nested{{#ifpage subpage1 subpage2 subpage3 subpage4}} is-active{{/ifpage}}">
     {{#if subtitle1}}
-    <li{{#ifpage subpage1}} class="is-current"{{/ifpage}}><a href="{{subpage1}}.html"{{#ifpage subpage1}} aria-current="page"{{/ifpage}}>{{subtitle1}}</a></li>
+    <li{{#ifpage subpage1}} class="is-current"{{/ifpage}}><a href="{{routePath root subpage1}}"{{#ifpage subpage1}} aria-current="page"{{/ifpage}}>{{subtitle1}}</a></li>
     {{/if}}
     {{#if subtitle2}}
-    <li{{#ifpage subpage2}} class="is-current"{{/ifpage}}><a href="{{subpage2}}.html"{{#ifpage subpage2}} aria-current="page"{{/ifpage}}>{{subtitle2}}</a></li>
+    <li{{#ifpage subpage2}} class="is-current"{{/ifpage}}><a href="{{routePath root subpage2}}"{{#ifpage subpage2}} aria-current="page"{{/ifpage}}>{{subtitle2}}</a></li>
     {{/if}}
     {{#if subtitle3}}
-    <li{{#ifpage subpage3}} class="is-current"{{/ifpage}}><a href="{{subpage3}}.html"{{#ifpage subpage3}} aria-current="page"{{/ifpage}}>{{subtitle3}}</a></li>
+    <li{{#ifpage subpage3}} class="is-current"{{/ifpage}}><a href="{{routePath root subpage3}}"{{#ifpage subpage3}} aria-current="page"{{/ifpage}}>{{subtitle3}}</a></li>
     {{/if}}
     {{#if subtitle4}}
-    <li{{#ifpage subpage4}} class="is-current"{{/ifpage}}><a href="{{subpage4}}.html"{{#ifpage subpage4}} aria-current="page"{{/ifpage}}>{{subtitle4}}</a></li>
+    <li{{#ifpage subpage4}} class="is-current"{{/ifpage}}><a href="{{routePath root subpage4}}"{{#ifpage subpage4}} aria-current="page"{{/ifpage}}>{{subtitle4}}</a></li>
     {{/if}}
 </ul>
 {{/ifequal}}
