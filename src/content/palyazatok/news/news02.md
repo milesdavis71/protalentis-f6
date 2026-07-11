@@ -1,3 +1,13 @@
+---
+type: palyazat
+title: Ösztöndíj joghallgatók számára 2022
+active: false
+date:
+deadline:
+requirements:
+classes: hide
+---
+
 A Pro Talentis Universitatis Alapítvány *ösztöndíjat hirdet joghallgatók számára, akik a jogösszehasonlítás művelése területén kiemelkedő teljesítményt nyújtottak*.
 
 Pályázati feltételek:

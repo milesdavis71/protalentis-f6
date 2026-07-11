@@ -1,3 +1,14 @@
+---
+type: palyazat
+title: Pályázati felhívás
+date: "2025-08-28"
+active: false
+deadline:
+requirements:
+btn_link: palyazati_felhiv_nemz_tan_csapatvers_tamogatasra_2025.pdf
+btn_title: PÁLYÁZAT LETÖLTÉSE
+---
+
 **A PRO TALENTIS UNIVERSITATIS ALAPÍTVÁNY** 
 pályázatot hirdet
 

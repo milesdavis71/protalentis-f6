@@ -1,3 +1,14 @@
+---
+type: palyazat
+title: Pályázat tehetséggondozásban aktív SZTE munkatársak továbbképzési támogatására a 2024/2025. tanév második félévére
+date: "2025-04-23"
+active: false
+deadline:
+requirements:
+btn_link: palyazati_felhivas_Pro-T_tovabbkepzesi_tamogatas_2025.pdf
+btn_title: PÁLYÁZAT LETÖLTÉSE
+---
+
 Az SZTE Junior Akadémia a Pro Talentis Universitatis Alapítvánnyal együttműködve
 
 **pályázatot hirdet**

@@ -1,3 +1,14 @@
+---
+type: palyazat
+title: Kiváló sportoló pályázat kosárlabdázóknak 2023–2024
+active: false
+date:
+deadline:
+requirements:
+btn_link: kivalo_sportolo_kosarlabdazo_palyazat_2023.pdf
+btn_title: Pályázat letöltése
+---
+
 Az SZTE Junior Akadémia a Pro Talentis Universitatis Alapítvánnyal együttműködve
 
 **pályázatot hirdet**

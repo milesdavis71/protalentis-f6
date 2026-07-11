@@ -1,3 +1,13 @@
+---
+type: palyazat
+title: Középiskolás tehetségek mentora ösztöndíj
+active: false
+date:
+deadline:
+btn_link: középisk_tehets_mentora_pályáz_felhív_2022_2023.pdf
+btn_title: További információ
+---
+
 **Pályázati felhívás**
 
 A Pro Talentis Universitatis Alapítvány

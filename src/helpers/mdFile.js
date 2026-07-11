@@ -40,7 +40,9 @@ module.exports = function mdFile(key, options) {
     throw new Error(`Markdown content file not found: ${relativePath}`);
   }
 
-  const markdownSource = fs.readFileSync(absolutePath, "utf8");
+  const markdownSource = fs
+    .readFileSync(absolutePath, "utf8")
+    .replace(/^---\s*\r?\n[\s\S]*?\r?\n---\s*(?:\r?\n|$)/, "");
   const context = Object.assign({}, options.data && options.data.root, this);
   const renderedMarkdown = Handlebars.compile(markdownSource)(context);
 

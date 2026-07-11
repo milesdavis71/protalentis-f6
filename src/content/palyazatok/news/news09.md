@@ -1,3 +1,15 @@
+---
+type: palyazat
+title: Tanulmányi ösztöndíjpályázat kosárlabdázóknak
+slug: tanulmanyi-osztondij-kosarlabdazoknak
+date: "2025-10-05"
+active: false
+deadline:
+requirements: Aktív hallgatói jogviszony megléte a támogatás folyósításakor. A pályázó hallgató az SZTE nevét viselő sportszervezetben, szakosztályban sportol, heti rendszerességgel részt vesz az egyesület, szakosztály munkájában.
+btn_link:
+btn_title: PÁLYÁZAT ADATLAP LETÖLTÉSE
+---
+
 Az SZTE Junior Akadémia a Pro Talentis Universitatis Alapítvánnyal együttműködve 
 
 <p class="text-center"> <b>tanulmányi ösztöndíjpályázatot hirdet</b> </p> 

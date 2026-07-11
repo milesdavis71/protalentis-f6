@@ -21,6 +21,8 @@ const unsafeYamlTypes = require("js-yaml-js-types").all;
 const YAML_SCHEMA = yaml.DEFAULT_SCHEMA.extend(unsafeYamlTypes);
 const GENERATED_PALYAZAT_DIR = path.join("src", "pages", "hirek");
 const GENERATED_PALYAZAT_GLOB = "src/pages/hirek/**/*.html";
+const PALYAZAT_CONTENT_DIR = path.join("src", "content", "palyazatok", "news");
+const GENERATED_PALYAZAT_DATA = path.join("src", "data", "palyazatok.json");
 const SEARCH_DATA_FILE = path.join("src", "data", "search.yml");
 const SEARCH_INDEX_FILE = path.join("dist", "assets", "data", "search.json");
 const HTACCESS_RULES = `Options -MultiViews
@@ -54,6 +56,40 @@ console.log(UNCSS_OPTIONS);
 
 function loadYamlFile(filePath) {
   return yaml.load(fs.readFileSync(filePath, "utf8"), { schema: YAML_SCHEMA });
+}
+
+function parseMarkdownFrontMatter(filePath) {
+  const source = fs.readFileSync(filePath, "utf8");
+  const match = source.match(/^---\s*\r?\n([\s\S]*?)\r?\n---\s*(?:\r?\n|$)/);
+
+  if (!match) {
+    throw new Error(`Missing YAML front matter: ${filePath}`);
+  }
+
+  return yaml.load(match[1], { schema: YAML_SCHEMA }) || {};
+}
+
+function getPalyazatItems() {
+  return fs
+    .readdirSync(PALYAZAT_CONTENT_DIR)
+    .filter((fileName) => fileName.endsWith(".md"))
+    .map((fileName) => {
+      const filePath = path.join(PALYAZAT_CONTENT_DIR, fileName);
+      const item = parseMarkdownFrontMatter(filePath);
+      const content = path.basename(fileName, ".md");
+
+      if (item.type !== "palyazat") {
+        return null;
+      }
+
+      if (!item.title) {
+        throw new Error(`Missing title in ${filePath}`);
+      }
+
+      return { ...item, content, active: item.active === true };
+    })
+    .filter(Boolean)
+    .sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
 }
 
 function getPalyazatPageName(palyazatItem) {
@@ -90,10 +126,7 @@ function writeFileIfChanged(filePath, contents) {
 }
 
 function generatePalyazatPages(done) {
-  const globalData = loadYamlFile(path.join("src", "data", "global.yml"));
-  const palyazatItems = Array.isArray(globalData.palyazatok)
-    ? globalData.palyazatok
-    : [];
+  const palyazatItems = getPalyazatItems();
   const usedPageNames = new Set();
   const expectedFiles = new Set();
 
@@ -135,6 +168,11 @@ function generatePalyazatPages(done) {
       fs.unlinkSync(filePath);
     }
   });
+
+  writeFileIfChanged(
+    GENERATED_PALYAZAT_DATA,
+    `${JSON.stringify(palyazatItems, null, 2)}\n`,
+  );
 
   done();
 }
@@ -413,7 +451,15 @@ function watch() {
     .on("all", gulp.series(resetPages, pages, browser.reload));
   gulp
     .watch("src/content/**/*.md")
-    .on("all", gulp.series(pages, browser.reload));
+    .on(
+      "all",
+      gulp.series(
+        generatePalyazatPages,
+        resetPages,
+        pages,
+        browser.reload,
+      ),
+    );
   gulp.watch("src/assets/scss/**/*.scss").on("all", sassBuild);
   gulp
     .watch("src/assets/js/**/*.js")

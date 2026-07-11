@@ -1,3 +1,12 @@
+---
+type: palyazat
+title: Kiváló sportoló pályázat kosárlabdázóknak 2022–2023
+active: false
+date:
+deadline:
+classes: hide
+---
+
 Az SZTE Junior Akadémia a Pro Talentis Universitatis Alapítvánnyal együttműködve pályázatot hirdet felsőoktatási tanulmányokat folytató, kiváló sportteljesítménnyel rendelkező, élvonalbeli kosárlabdázóknak a 2022/2023. tanévre. **A pályázat benyújtásának feltételei és az ösztöndíjra jogosultak köre:**
 * Aktív hallgatói jogviszony megléte a támogatás folyósításakor
 * A pályázó hallgató az SZTE nevét viselő sportszervezetben, szakosztályban sportol, heti rendszerességgel részt vesz az egyesület, szakosztály munkájában.

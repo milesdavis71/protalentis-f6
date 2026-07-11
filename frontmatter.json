@@ -1,0 +1,97 @@
+{
+  "$schema": "https://frontmatter.codes/config/content.schema.json",
+  "frontMatter.framework.id": "other",
+  "frontMatter.content.defaultFileType": "md",
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "Pályázatok",
+      "path": "[[workspace]]/src/content/palyazatok/news",
+      "previewPath": "/hirek",
+      "contentTypes": ["palyazat"]
+    }
+  ],
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "palyazat",
+      "pageBundle": false,
+      "fileType": "md",
+      "defaultFileName": "{{slug}}",
+      "slugTemplate": "{{title}}",
+      "previewPath": "/hirek",
+      "fields": [
+        {
+          "title": "Tartalomtípus",
+          "name": "type",
+          "type": "string",
+          "default": "palyazat",
+          "hidden": true,
+          "required": true
+        },
+        {
+          "title": "Pályázat címe",
+          "name": "title",
+          "type": "string",
+          "single": true,
+          "required": true
+        },
+        {
+          "title": "URL azonosító",
+          "name": "slug",
+          "type": "slug",
+          "editable": true,
+          "default": "{{slug}}",
+          "required": true
+        },
+        {
+          "title": "Közzététel dátuma",
+          "name": "date",
+          "type": "datetime",
+          "dateFormat": "yyyy-MM-dd",
+          "default": "{{now}}",
+          "isPublishDate": true,
+          "required": true
+        },
+        {
+          "title": "Aktuális pályázat",
+          "name": "active",
+          "type": "boolean",
+          "default": true,
+          "description": "Bekapcsolva az aktuális pályázatok között jelenik meg."
+        },
+        {
+          "title": "Beadási határidő",
+          "name": "deadline",
+          "type": "datetime",
+          "dateFormat": "yyyy-MM-dd"
+        },
+        {
+          "title": "Kik adhatják be?",
+          "name": "requirements",
+          "type": "string",
+          "description": "A pályázati kártyán megjelenő rövid jogosultsági leírás."
+        },
+        {
+          "title": "Kártyakép neve",
+          "name": "image",
+          "type": "string",
+          "single": true,
+          "description": "Fájlnév kiterjesztés nélkül az assets/img/palyazat mappából."
+        },
+        {
+          "title": "Letölthető PDF fájlneve",
+          "name": "btn_link",
+          "type": "string",
+          "single": true,
+          "description": "Fájlnév az assets/pdf mappából, például palyazat.pdf."
+        },
+        {
+          "title": "Letöltés gomb felirata",
+          "name": "btn_title",
+          "type": "string",
+          "single": true,
+          "default": "PÁLYÁZAT LETÖLTÉSE"
+        }
+      ]
+    }
+  ]
+}

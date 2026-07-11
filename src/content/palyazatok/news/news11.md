@@ -1,3 +1,16 @@
+---
+type: palyazat
+title: Pro Talentis – Altajisztikai Ösztöndíj 2026
+slug: altajisztika-osztondij-2026
+date: "2026-03-17"
+active: false
+image: altajisztika
+deadline: "2026-04-19"
+requirements: legalább II. évfolyamos Keleti Nyelvek (Altajisztika szakirány) BA, illetve Altajisztika szakirányos MA hallgatók
+btn_link: palyazati_felhivas_altajisztika_osztondij_2026.pdf
+btn_title: PÁLYÁZAT ADATLAP LETÖLTÉSE
+---
+
 <p style="margin-bottom: 0;">
 Pályázatot nyújthat be a Szegedi Tudományegyetem Bölcsészet- és Társadalomtudományi Karának 
 Keleti Nyelvek (altajisztika szakirány) BA legalább II. évfolyamos hallgatója, illetve Altajisztika MA 

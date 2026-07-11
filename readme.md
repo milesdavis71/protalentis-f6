@@ -77,15 +77,33 @@ npm run build
 
 Ez gyorsan kiszűri a YAML, Handlebars és Markdown renderelési hibákat.
 
-## Automatikusan generált pályázat oldalak
+## Pályázatok kezelése Front Matter CMS-sel
 
-A `src/data/global.yml` pályázati adataiból a build generál oldalfájlokat a `src/pages/hirek/` alá. Ezeket nem érdemes kézzel szerkeszteni, mert újragenerálódnak.
+Minden pályázat egyetlen Markdown-fájlban található a `src/content/palyazatok/news/` mappában. A fájl eleji YAML front matter tartalmazza a kártya és az oldal metaadatait, alatta pedig a pályázat teljes leírása írható Markdownban.
+
+A javasolt VS Code bővítmény a **Front Matter CMS** (`eliostruyf.vscode-front-matter`). A workspace automatikusan felajánlja a telepítését. Új pályázat létrehozása:
+
+1. nyisd meg a Front Matter CMS panelt a VS Code oldalsávjában
+2. válaszd a **Create new content** műveletet
+3. válaszd a **Pályázatok** mappát és a `palyazat` tartalomtípust
+4. töltsd ki a címet, URL-azonosítót, dátumokat és a kártyán megjelenő mezőket
+5. írd meg a leírást a létrejött Markdown-fájl törzsében
+6. futtasd az `npm run build:dev` parancsot
+
+Az `active` kapcsoló dönti el, hogy a tartalom az aktuális vagy a korábbi pályázatok között jelenik meg. A `slug` adja az oldal URL-jét. A `date` és `deadline` mezők formátuma `yyyy-MM-dd`.
+
+A build a Markdown-fájlokból generálja:
+
+- az oldalfájlokat a `src/pages/hirek/` alatt
+- a Panini számára használt `src/data/palyazatok.json` adatfájlt
+
+Mindkettő generált állomány, ezért egyiket sem kell kézzel szerkeszteni.
 
 Kapcsolódó részek:
 
-- adatforrás: `src/data/global.yml`
+- adatforrás és tartalmi törzs: `src/content/palyazatok/news/*.md`
+- Front Matter CMS konfiguráció: `frontmatter.json`
 - generálás: `gulpfile.babel.js`
-- tartalmi törzs: `src/content/palyazatok/news/`
 
 ## Gyakori feladatok
 
@@ -100,8 +118,9 @@ Kapcsolódó részek:
 1. nyisd meg a megfelelő fájlt a `src/content/partners/modals/` alatt
 2. szerkesztés után futtasd a buildet
 
-Új pályázati hír tartalmának módosítása:
+Meglévő pályázat módosítása:
 
-1. ellenőrizd a kulcsot a `src/data/global.yml` fájlban
-2. szerkeszd a megfelelő `.md` fájlt a `src/content/palyazatok/news/` alatt
-3. futtasd a buildet
+1. nyisd meg a Front Matter CMS tartalomkezelő paneljét
+2. válaszd ki a pályázatot a tartalomlistából
+3. módosítsd a metaadatokat vagy a Markdown-törzset
+4. futtasd a buildet

@@ -1,3 +1,15 @@
+---
+type: palyazat
+title: Top élelmiszermérnök 2026
+slug: top-elelmiszermernok-2026
+date: "2025-12-18"
+active: false
+deadline:
+requirements: élelmiszermérnök BSc és MSc szakos hallgatók, akik ebben a szemeszterben sikeres záróvizsgát tettek, tudományos vagy sport eredményeket értek el.
+btn_link: top-elelmiszermernok-2026.pdf
+btn_title: PÁLYÁZAT ADATLAP LETÖLTÉSE
+---
+
 **A PRO TALENTIS UNIVERSITATIS ALAPÍTVÁNY pályázatot hirdet**
 
 a Top Élelemiszermérnök 2026 ösztöndíj elnyerésére az SZTE Mérnöki Kar VÉGZŐS Élelmiszermérnök hallgatói részére
