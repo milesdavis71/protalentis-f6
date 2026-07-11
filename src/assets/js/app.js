@@ -89,7 +89,7 @@ document.querySelectorAll('[data-site-search]').forEach((form) => {
     } else {
       matches.forEach((entry, index) => {
         const link = document.createElement('a');
-        link.id = `site-search-result-${index}`;
+        link.id = `${results.id}-option-${index}`;
         link.className = 'site-search-result';
         link.href = `${siteRoot}${entry.link}`;
         link.setAttribute('role', 'option');

@@ -18,37 +18,7 @@
     </ul>
   </div>
   <div class="top-bar-right">
-    <form
-      class="site-search"
-      role="search"
-      data-site-search
-      data-search-index="{{root}}assets/data/search.json"
-      data-site-root="{{root}}"
-    >
-      <label class="show-for-sr" for="site-search-input">Keresés az oldalon</label>
-      <div class="input-group">
-        <input
-          class="input-group-field site-search-input"
-          id="site-search-input"
-          type="search"
-          placeholder="Keresés"
-          autocomplete="off"
-          aria-autocomplete="list"
-          aria-controls="site-search-results"
-          aria-expanded="false"
-        >
-        <div class="input-group-button">
-          <button type="submit" class="button">Keresés</button>
-        </div>
-      </div>
-      <div
-        class="site-search-results"
-        id="site-search-results"
-        role="listbox"
-        aria-label="Keresési találatok"
-        hidden
-      ></div>
-    </form>
+    {{> site_search inputId="desktop-search-input" resultsId="desktop-search-results"}}
   </div>
 </div>
 <div class="hide-for-medium">
@@ -56,6 +26,13 @@
     <button class="menu-icon" type="button" data-toggle="mobile-menu-panel" aria-label="Menü"></button>
     <div class="title-bar-title">Menü</div>
     <div class="mobile-nav-foundation">Pro Talentis Universitas Alapítvány</div>
+  </div>
+  <div class="mobile-search-bar">
+    {{> site_search
+      inputId="mobile-search-input"
+      resultsId="mobile-search-results"
+      searchClass="mobile-site-search"
+    }}
   </div>
   <div class="mobile-nav-panel" id="mobile-menu-panel" data-animate="slide-in-down slide-out-up">
     {{> navigation_menu menuId="mobile-menu" menuClass="vertical menu accordion-menu" hideLogo=true}}

@@ -1,0 +1,34 @@
+<form
+  class="site-search {{searchClass}}"
+  role="search"
+  data-site-search
+  data-search-index="{{root}}assets/data/search.json"
+  data-site-root="{{root}}"
+>
+  <label class="show-for-sr" for="{{inputId}}">Keresés az oldalon</label>
+  <div class="input-group">
+    <input
+      class="input-group-field site-search-input"
+      id="{{inputId}}"
+      type="search"
+      placeholder="Keresés"
+      autocomplete="off"
+      aria-autocomplete="list"
+      aria-controls="{{resultsId}}"
+      aria-expanded="false"
+    >
+    <div class="input-group-button">
+      <button type="submit" class="button" aria-label="Keresés">
+        <span class="show-for-medium">Keresés</span>
+        <i class="fa-duotone fa-magnifying-glass hide-for-medium" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+  <div
+    class="site-search-results"
+    id="{{resultsId}}"
+    role="listbox"
+    aria-label="Keresési találatok"
+    hidden
+  ></div>
+</form>

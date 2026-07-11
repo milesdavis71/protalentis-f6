@@ -354,6 +354,32 @@ body {
   padding: 0.75rem 0.8rem;
 }
 
+.mobile-site-search {
+  min-width: 0;
+  width: 100%;
+}
+
+.mobile-search-bar {
+  background: $black;
+  border-left: 1px solid rgba($white, 0.15);
+  border-right: 1px solid rgba($white, 0.15);
+  padding: 0.5rem 1rem;
+}
+
+.mobile-site-search .site-search-results {
+  box-shadow: none;
+  max-height: 16rem;
+  position: static;
+  width: 100%;
+}
+
+.mobile-site-search .input-group-button .button {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-width: 2.75rem;
+}
+
 .palyazat-card-meta div {
   border-top: 1px solid #eeeeee;
   padding: 0.65rem 0;
