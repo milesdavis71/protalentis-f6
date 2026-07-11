@@ -18,10 +18,37 @@
     </ul>
   </div>
   <div class="top-bar-right">
-    <!-- <ul class="menu">
-      <li><input type="search" placeholder="Search"></li>
-      <li><button type="button" class="button">Search</button></li>
-    </ul> -->
+    <form
+      class="site-search"
+      role="search"
+      data-site-search
+      data-search-index="{{root}}assets/data/search.json"
+      data-site-root="{{root}}"
+    >
+      <label class="show-for-sr" for="site-search-input">Keresés az oldalon</label>
+      <div class="input-group">
+        <input
+          class="input-group-field site-search-input"
+          id="site-search-input"
+          type="search"
+          placeholder="Keresés"
+          autocomplete="off"
+          aria-autocomplete="list"
+          aria-controls="site-search-results"
+          aria-expanded="false"
+        >
+        <div class="input-group-button">
+          <button type="submit" class="button">Keresés</button>
+        </div>
+      </div>
+      <div
+        class="site-search-results"
+        id="site-search-results"
+        role="listbox"
+        aria-label="Keresési találatok"
+        hidden
+      ></div>
+    </form>
   </div>
 </div>
 <div class="hide-for-medium">

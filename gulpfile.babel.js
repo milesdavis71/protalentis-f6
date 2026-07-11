@@ -21,6 +21,8 @@ const unsafeYamlTypes = require("js-yaml-js-types").all;
 const YAML_SCHEMA = yaml.DEFAULT_SCHEMA.extend(unsafeYamlTypes);
 const GENERATED_PALYAZAT_DIR = path.join("src", "pages", "hirek");
 const GENERATED_PALYAZAT_GLOB = "src/pages/hirek/**/*.html";
+const SEARCH_DATA_FILE = path.join("src", "data", "search.yml");
+const SEARCH_INDEX_FILE = path.join("dist", "assets", "data", "search.json");
 const HTACCESS_RULES = `Options -MultiViews
 RewriteEngine On
 
@@ -137,6 +139,37 @@ function generatePalyazatPages(done) {
   done();
 }
 
+function generateSearchIndex(done) {
+  const entries = loadYamlFile(SEARCH_DATA_FILE);
+
+  if (!Array.isArray(entries)) {
+    throw new Error("src/data/search.yml must contain a YAML list.");
+  }
+
+  const index = entries.map((entry, indexPosition) => {
+    if (!entry || !entry.title || !entry.link) {
+      throw new Error(
+        `Search entry ${indexPosition + 1} must have a title and a link.`,
+      );
+    }
+
+    return {
+      title: String(entry.title),
+      link: String(entry.link),
+      description: entry.description ? String(entry.description) : "",
+      keywords: Array.isArray(entry.keywords)
+        ? entry.keywords.map(String)
+        : entry.keywords
+          ? [String(entry.keywords)]
+          : [],
+    };
+  });
+
+  fs.mkdirSync(path.dirname(SEARCH_INDEX_FILE), { recursive: true });
+  writeFileIfChanged(SEARCH_INDEX_FILE, `${JSON.stringify(index, null, 2)}\n`);
+  done();
+}
+
 // Build the "dist" folder by running all of the below tasks
 // Sass must be run later so UnCSS can search for used classes in the others assets.
 gulp.task(
@@ -144,7 +177,7 @@ gulp.task(
   gulp.series(
     clean,
     generatePalyazatPages,
-    gulp.parallel(pages, javascript, images, copy, routing),
+    gulp.parallel(pages, javascript, images, copy, routing, generateSearchIndex),
     sassBuild,
     styleGuide,
   ),
@@ -367,7 +400,13 @@ function watch() {
     .watch("src/data/**/*.{js,json,yml}")
     .on(
       "all",
-      gulp.series(resetPages, generatePalyazatPages, pages, browser.reload),
+      gulp.series(
+        resetPages,
+        generatePalyazatPages,
+        generateSearchIndex,
+        pages,
+        browser.reload,
+      ),
     );
   gulp
     .watch("src/helpers/**/*.js")

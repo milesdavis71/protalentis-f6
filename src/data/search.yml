@@ -1,0 +1,71 @@
+# A title és a link kötelező. A description és a keywords javítja a találatokat.
+# A link a webhely gyökeréhez képest értendő, .html kiterjesztés nélkül.
+- title: Főoldal
+  link: index
+  description: A Pro Talentis Universitatis Alapítvány bemutatkozó oldala.
+  keywords: [alapítvány, tehetséggondozás, Szeged, SZTE]
+
+- title: Aktuális pályázatok
+  link: aktualis_palyazatok
+  description: Jelenleg elérhető ösztöndíjak és pályázati felhívások.
+  keywords: [pályázat, ösztöndíj, felhívás, határidő, támogatás]
+
+- title: Célkitűzés
+  link: celkituzes
+  description: Az alapítvány céljai és küldetése.
+  keywords: [alapítvány, cél, küldetés, tehetség]
+
+- title: Tevékenység
+  link: tevekenyseg
+  description: Az alapítvány tehetséggondozó tevékenysége.
+  keywords: [program, tehetséggondozás, támogatás]
+
+- title: Szolgáltatások
+  link: szolgaltatasok
+  description: A Pro Talentis Universitatis Alapítvány szolgáltatásai.
+  keywords: [szolgáltatás, segítség, támogatás]
+
+- title: SZTE Junior Akadémia
+  link: szte_junior_akademia
+  description: Információk a Szegedi Tudományegyetem Junior Akadémiájáról.
+  keywords: [SZTE, egyetem, diák, oktatás, akadémia]
+
+- title: Szegedi Tehetséggondozó Tanács
+  link: szegedi_tehetseggondozo_tanacs
+  description: A Szegedi Tehetséggondozó Tanács bemutatása.
+  keywords: [tanács, tehetség, Szeged]
+
+- title: Partnerek és támogatók
+  link: partnerek
+  description: Az alapítvány vállalati és intézményi partnerei.
+  keywords: [partner, támogató, vállalat, szponzor]
+
+- title: Pályázatok
+  link: palyazatok
+  description: Aktuális és korábbi pályázatok, ösztöndíjak.
+  keywords: [pályázat, ösztöndíj, archívum, hallgató]
+
+- title: Vállalati Ösztöndíj Program
+  link: vallalati_osztondij_program
+  description: Vállalati partnerekkel közös hallgatói ösztöndíjprogram.
+  keywords: [vállalat, ösztöndíj, hallgató, program]
+
+- title: Pro Talentis Díj
+  link: pro_tanentis_dij
+  description: Információk a Pro Talentis Díjról.
+  keywords: [díj, elismerés, tehetség]
+
+- title: Javíts! ösztöndíj
+  link: javits_osztondij
+  description: A Javíts! ösztöndíjprogram részletei.
+  keywords: [javíts, ösztöndíj, hallgató, tanulmány]
+
+- title: Galéria
+  link: galeria
+  description: Képek az alapítvány programjairól és eseményeiről.
+  keywords: [galéria, képek, fotók, esemény]
+
+- title: Elérhetőségek és munkatársak
+  link: elerhetosegek
+  description: Kapcsolat, szervezeti adatok és az alapítvány munkatársai.
+  keywords: [kapcsolat, cím, telefon, email, munkatárs, szervezet]
